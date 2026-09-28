@@ -1,0 +1,1844 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="French with Rana: free French lessons, games, quizzes and listening practice for every student.">
+<title>French with Rana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F6FA; --surface:#FFFFFF; --surface-2:#ECEFF7; --ink:#141B34; --ink-2:#4B5372; --line:#DADFEC;
+  --bleu:#2446C8; --on-bleu:#FFFFFF; --bleu-soft:#E3E8FB;
+  --rouge:#D2394A; --rouge-soft:#FBE5E8; --vert:#1C8456; --vert-soft:#DDF2E7;
+  --m-a1:#2446C8; --m-a2:#E3A600; --m-b1:#00936E; --m-b2:#C3138E; --on-a2:#141B34;
+  --shadow:0 1px 2px rgba(20,27,52,.06),0 8px 24px rgba(20,27,52,.06);
+  --font-d:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --font-b:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0E1326; --surface:#161D36; --surface-2:#1E2644; --ink:#EEF0F8; --ink-2:#A7AEC9; --line:#2A3356;
+    --bleu:#8AA0FF; --on-bleu:#0E1326; --bleu-soft:#222C57;
+    --rouge:#FF7482; --rouge-soft:#3B1F2C; --vert:#52CC93; --vert-soft:#16392B;
+    --m-a1:#5B78F0; --m-b1:#16B388; --m-b2:#E0409F;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0E1326; --surface:#161D36; --surface-2:#1E2644; --ink:#EEF0F8; --ink-2:#A7AEC9; --line:#2A3356;
+  --bleu:#8AA0FF; --on-bleu:#0E1326; --bleu-soft:#222C57;
+  --rouge:#FF7482; --rouge-soft:#3B1F2C; --vert:#52CC93; --vert-soft:#16392B;
+  --m-a1:#5B78F0; --m-b1:#16B388; --m-b2:#E0409F;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-b);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--bleu)}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+h1,h2{font-family:var(--font-d);font-weight:400;line-height:1.05;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.5rem,7vw,4.4rem)}
+h2{font-size:clamp(1.8rem,4vw,2.4rem)}
+h3{font-size:1.1rem;font-weight:700;margin:0;line-height:1.3}
+p{margin:0}
+.eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.muted{color:var(--ink-2)}
+em.accent{font-style:italic;color:var(--bleu)}
+:focus-visible{outline:3px solid var(--bleu);outline-offset:2px;border-radius:6px}
+
+/* header */
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px 6px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-d);font-size:1.55rem;color:var(--ink);text-decoration:none;line-height:1}
+.flag{display:inline-flex;width:24px;height:17px;border-radius:3px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.flag i{flex:1}.flag i:nth-child(1){background:#1F3FB8}.flag i:nth-child(2){background:#fff}.flag i:nth-child(3){background:#D2394A}
+.hello{font-size:.9rem;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:50%}
+nav.main{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:4px 10px}
+nav.main::-webkit-scrollbar{display:none}
+nav.main a{white-space:nowrap;padding:6px 12px;border-radius:999px;color:var(--ink-2);text-decoration:none;font-weight:600;font-size:.9rem}
+nav.main a:hover{background:var(--surface-2);color:var(--ink)}
+nav.main a[aria-current="page"]{background:var(--ink);color:var(--bg)}
+
+main{padding-block:32px 64px;min-height:60vh}
+.stack{display:flex;flex-direction:column;gap:28px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--bleu);color:var(--on-bleu);border:0;border-radius:10px;padding:11px 18px;font:700 .95rem var(--font-b);cursor:pointer;text-decoration:none;min-height:44px}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.ghost:hover{background:var(--surface-2)}
+.btn.small{padding:7px 12px;min-height:36px;font-size:.85rem}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+select,input[type=text]{font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px;width:100%;max-width:340px}
+input[type=text]:focus{border-color:var(--bleu);outline:none;box-shadow:0 0 0 3px var(--bleu-soft)}
+
+/* say button */
+.say{flex:none;display:inline-grid;place-items:center;width:36px;height:36px;border-radius:50%;border:0;background:var(--bleu-soft);color:var(--bleu);cursor:pointer}
+.say:hover{background:var(--bleu);color:var(--on-bleu)}
+.say svg{width:18px;height:18px}
+.say.slow{width:auto;padding:0 10px;border-radius:999px;font:700 .75rem var(--font-b)}
+
+/* metro badges */
+.lb{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--c);color:#fff;font-weight:800;font-size:.95rem;flex:none;letter-spacing:-.02em}
+.lb.a2{color:var(--on-a2)}
+.lb.sm{width:32px;height:32px;font-size:.75rem}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+.hero p.lead{font-size:1.15rem;color:var(--ink-2);max-width:34rem;margin-top:18px}
+.hero .row{margin-top:26px}
+.ticket{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);border:1px solid var(--line);overflow:hidden}
+.ticket .top{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:2px dashed var(--line)}
+.ticket .body{padding:18px 20px 20px}
+.mini-line{position:relative;display:flex;justify-content:space-between;margin:18px 4px 8px}
+.mini-line::before{content:"";position:absolute;left:0;right:0;top:7px;height:6px;border-radius:3px;background:var(--m-a1)}
+.mini-line span{position:relative;width:20px;height:20px;border-radius:50%;background:var(--surface);border:4px solid var(--m-a1)}
+.mini-line span.here{background:var(--m-a1);box-shadow:0 0 0 4px var(--bleu-soft)}
+.ticket .labels{display:flex;justify-content:space-between;font-size:.72rem;color:var(--ink-2)}
+
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+a.tile-link{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;transition:transform .15s,border-color .15s}
+a.tile-link:hover{transform:translateY(-2px);border-color:var(--bleu)}
+.tile-link .ico{font-size:1.6rem;line-height:1}
+.tile-link p{color:var(--ink-2);font-size:.92rem}
+.level-card .row{gap:12px}
+.level-card .fr{font-family:var(--font-d);font-size:1.5rem;line-height:1}
+
+/* learn / metro line */
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tabs button{display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:5px 14px 5px 5px;font:600 .92rem var(--font-b);color:var(--ink);cursor:pointer}
+.tabs button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.line{position:relative;padding-left:48px;margin-top:8px}
+.line::before{content:"";position:absolute;left:17px;top:18px;bottom:18px;width:10px;border-radius:5px;background:var(--c)}
+.station{position:relative;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;margin-block:6px;border-radius:12px}
+.station::before{content:"";position:absolute;left:-40px;top:50%;transform:translateY(-50%);width:22px;height:22px;border-radius:50%;background:var(--surface);border:5px solid var(--c)}
+.station.open{background:var(--surface);border:1px solid var(--line)}
+.station.open::before{background:var(--c)}
+.station .n{font-size:.75rem;font-weight:700;color:var(--ink-2);letter-spacing:.08em;text-transform:uppercase}
+.station .t{font-family:var(--font-d);font-size:1.45rem;line-height:1.1}
+.station .s{font-size:.9rem;color:var(--ink-2)}
+.chip{display:inline-block;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.chip.ok{background:var(--vert-soft);color:var(--vert)}
+
+/* lesson */
+.lesson-head{display:flex;gap:16px;align-items:center}
+.lesson-grid{display:grid;grid-template-columns:210px minmax(0,1fr);gap:36px;align-items:start}
+.lesson-grid > *,.stack > *{min-width:0}
+.toc{position:sticky;top:130px;display:flex;flex-direction:column;gap:2px;font-size:.9rem}
+.toc a{color:var(--ink-2);text-decoration:none;padding:5px 10px;border-radius:8px;border-left:3px solid transparent}
+.toc a:hover{color:var(--ink);background:var(--surface-2)}
+section.part{scroll-margin-top:130px;display:flex;flex-direction:column;gap:14px}
+.part > header{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.part > header .num{font-family:var(--font-d);font-size:1.6rem;color:var(--bleu);line-height:1}
+.part > header h2{font-size:1.9rem}
+ul.clean{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.vw{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.vw .fr{font-weight:700}
+.vw .en{font-size:.88rem;color:var(--ink-2);line-height:1.35}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--surface);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface-2);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+tr:last-child td{border-bottom:0}
+.note{background:var(--bleu-soft);border-radius:12px;padding:14px 16px;font-size:.95rem}
+.ex{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.ex:last-child{border-bottom:0}
+.ex .en{color:var(--ink-2);font-size:.92rem}
+.dialogue{display:flex;flex-direction:column;gap:10px}
+.bubble{display:flex;gap:12px;align-items:flex-start;max-width:560px}
+.bubble.r{align-self:flex-end;flex-direction:row-reverse;text-align:right}
+.bubble .who{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.85rem;color:#fff}
+.bubble .txt{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 14px}
+.bubble .txt .en{font-size:.85rem;color:var(--ink-2)}
+.bubble .txt .fr{font-weight:600}
+.bubble .say{align-self:center}
+
+/* quiz & activities */
+.activity{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.qhead{display:flex;justify-content:space-between;font-size:.85rem;font-weight:700;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.pbar{height:6px;border-radius:3px;background:var(--surface-2);overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--bleu);transition:width .3s}
+.qtext{font-family:var(--font-d);font-size:1.6rem;line-height:1.2}
+.opts{display:grid;gap:8px}
+.opt{text-align:left;font:600 1rem var(--font-b);color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;cursor:pointer;min-height:48px}
+.opt:hover:not(:disabled){border-color:var(--bleu);background:var(--bleu-soft)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--vert);background:var(--vert-soft);color:var(--vert)}
+.opt.wrong{border-color:var(--rouge);background:var(--rouge-soft);color:var(--rouge)}
+.feedback{font-weight:600;min-height:1.6em}
+.feedback.good{color:var(--vert)}.feedback.bad{color:var(--rouge)}
+.result{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.big{font-family:var(--font-d);font-size:3.6rem;line-height:1;font-weight:400}
+dl.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0;width:100%}
+dl.stats div{background:var(--surface-2);border-radius:12px;padding:12px 14px}
+dl.stats dt{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+dl.stats dd{margin:2px 0 0;font-size:1.25rem;font-weight:700;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.li-item{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.li-item:last-of-type{border-bottom:0}
+.li-item .opts{grid-template-columns:repeat(3,1fr);flex:1;min-width:240px}
+.li-item .opt{padding:8px 12px;min-height:40px;font-size:.92rem}
+.fill{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.fill input[type=text]{width:150px;min-height:38px;padding:6px 10px}
+.fill input.good{border-color:var(--vert);background:var(--vert-soft)}
+.fill input.bad{border-color:var(--rouge);background:var(--rouge-soft)}
+.fill .fix{font-size:.85rem;color:var(--rouge);font-weight:600}
+
+/* games */
+.match{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.match .col{display:flex;flex-direction:column;gap:8px}
+.gtile{font:600 1rem var(--font-b);color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:12px;padding:12px;min-height:52px;cursor:pointer;transition:transform .12s}
+.gtile:hover:not(:disabled){border-color:var(--bleu)}
+.gtile.sel{border-color:var(--bleu);background:var(--bleu-soft)}
+.gtile.done{border-color:var(--vert);background:var(--vert-soft);color:var(--vert);opacity:.75;cursor:default}
+.gtile.no{border-color:var(--rouge);background:var(--rouge-soft);animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.memory{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.mcard{aspect-ratio:4/3;max-width:100%;border-radius:12px;border:1.5px solid var(--line);font:700 .95rem var(--font-b);cursor:pointer;padding:6px;line-height:1.2;background:var(--m-a1);color:transparent;position:relative}
+.mcard::after{content:"?";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--font-d);font-size:2rem;color:rgba(255,255,255,.85)}
+.mcard.up,.mcard.done{background:var(--surface);color:var(--ink)}
+.mcard.up::after,.mcard.done::after{content:none}
+.mcard.done{background:var(--vert-soft);color:var(--vert);border-color:var(--vert);cursor:default}
+.mcard.en.up{background:var(--surface-2)}
+.letters{display:flex;flex-wrap:wrap;gap:8px;min-height:52px}
+.letter{width:46px;height:50px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);font:700 1.3rem var(--font-b);color:var(--ink);cursor:pointer}
+.slotrow{border-radius:12px;background:var(--surface-2);padding:8px;min-height:66px}
+.slotrow .letter{background:var(--bleu-soft);border-color:var(--bleu)}
+.game-tabs{display:flex;gap:8px;flex-wrap:wrap}
+.game-tabs button{font:600 .92rem var(--font-b);padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.game-tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* topics */
+.topic-chip{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:999px;padding:4px 14px 4px 4px;font-weight:600;font-size:.9rem;color:var(--ink);text-decoration:none}
+.topic-chip .pin{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--rouge-soft);font-size:.95rem}
+.topic-chip[aria-current="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.class-card{border-color:color-mix(in srgb,var(--rouge) 35%,var(--line))}
+.class-card:hover{border-color:var(--rouge)}
+.class-card .pics{display:flex;flex-wrap:wrap;gap:6px;font-size:1.6rem;line-height:1;margin-top:4px}
+.vpic{font-size:1.6rem;line-height:1;flex:none}
+.prompt{display:flex;flex-direction:column;gap:8px}
+.bigpic{font-size:5rem;line-height:1.1;text-align:center}
+.opts.short{grid-template-columns:repeat(3,1fr)}
+.opts.short .opt{text-align:center;font-size:1.2rem}
+
+/* welcome (logged out) */
+.welcome{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding-block:12px}
+.welcome-intro{display:flex;flex-direction:column;gap:16px}
+.welcome-intro .lead{font-size:1.1rem;color:var(--ink-2);max-width:34rem}
+.welcome-list{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.welcome-list li{display:flex;align-items:center;gap:12px;font-weight:600}
+.welcome-list span{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);font-size:1.2rem}
+.welcome .auth{margin:0;width:100%}
+@media (max-width:900px){.welcome{grid-template-columns:1fr;gap:24px}.welcome-list{display:none}}
+/* accounts */
+.account{display:flex;align-items:center;gap:8px;flex:none}
+.acct{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.92rem}
+.avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--bleu);color:var(--on-bleu);font-weight:800}
+.auth{max-width:460px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.auth-card{display:flex;flex-direction:column;gap:8px}
+.auth-card h1{font-size:2.6rem;margin-bottom:6px}
+.auth-card label,.card label,#actForm label{font-weight:700;font-size:.88rem;margin-top:6px}
+.auth-card input,.auth-card select{max-width:none}
+.auth-card .btn{margin-top:8px}
+.hint{font-size:.8rem;color:var(--ink-2);margin-top:-2px}
+.form-err{color:var(--rouge);font-weight:600;font-size:.92rem;min-height:1.2em}
+select,input[type=password],input[type=email],input[type=date],textarea{font:inherit;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-height:44px;width:100%}
+select:focus,input:focus,textarea:focus{border-color:var(--bleu);outline:none;box-shadow:0 0 0 3px var(--bleu-soft)}
+textarea{resize:vertical;line-height:1.5}
+input[type=password],input[type=email]{max-width:none}
+.chip.new{background:var(--rouge-soft);color:var(--rouge);margin-left:6px}
+.chip.warn{background:#FFF1C9;color:#8A5A00}
+.chip.live-chip{background:var(--vert-soft);color:var(--vert)}
+.pin.star{background:#FFF1C9}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--line);margin-right:8px;vertical-align:middle}
+.dot.on{background:var(--vert);box-shadow:0 0 0 3px var(--vert-soft)}
+dd.live{color:var(--vert)}
+.person{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.9rem}
+.person .muted{font-weight:400;font-size:.8rem}
+.feed{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.feed-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;padding:10px 16px;border-bottom:1px solid var(--line);font-size:.92rem}
+.feed-row:last-child{border-bottom:0}
+.feed-row .when{font-size:.78rem;color:var(--ink-2);min-width:88px;font-variant-numeric:tabular-nums}
+.feed-row .what{flex:1 1 240px}
+.feed-row a{color:var(--ink);text-decoration:none}
+td.num{font-variant-numeric:tabular-nums}
+.score{font-weight:700;padding:2px 8px;border-radius:999px}
+.score.ok{background:var(--vert-soft);color:var(--vert)}.score.mid{background:#FFF1C9;color:#8A5A00}.score.low{background:var(--rouge-soft);color:var(--rouge)}
+td a{color:var(--ink);font-weight:600;text-decoration:none}
+td a:hover{color:var(--bleu)}
+.ttab{font:600 .92rem var(--font-b);padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);text-decoration:none;white-space:nowrap}
+.ttab[aria-current="page"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.qrow{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:6px;padding:10px;background:var(--surface-2);border-radius:12px}
+.qrow input[type=text]{max-width:none;min-height:40px;padding:8px 10px}
+.qrow input.ok-in{border-color:var(--vert)}
+.codebox{position:relative;margin-top:14px}
+.codebox pre{background:var(--surface-2);border-radius:12px;padding:14px;font-size:.78rem;overflow-x:auto;max-height:320px;margin:0}
+.codebox .btn{position:absolute;top:10px;right:10px}
+.btn.danger{box-shadow:inset 0 0 0 1.5px var(--rouge);color:var(--rouge)}
+.sub{display:flex;flex-direction:column;gap:8px}
+.answer{white-space:pre-wrap;background:var(--surface-2);border-radius:10px;padding:10px 12px}
+@media (max-width:700px){.qrow{grid-template-columns:1fr}.acct-name{display:none}}
+
+/* badges */
+.badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.badge{display:flex;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.badge .medal{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;background:var(--surface-2)}
+.badge.locked{opacity:.55}.badge.locked .medal{filter:grayscale(1)}
+.badge.won .medal{background:#FFF1C9;box-shadow:0 0 0 3px #E3A600}
+.badge b{display:block;font-size:.95rem}.badge span{font-size:.8rem;color:var(--ink-2);line-height:1.3;display:block}
+details.key{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
+details.key summary{cursor:pointer;font-weight:700}
+details.key[open] summary{margin-bottom:10px}
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:12px;padding:0;margin:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px}
+.steps li::before{content:counter(s);width:32px;height:32px;border-radius:50%;background:var(--bleu);color:var(--on-bleu);display:grid;place-items:center;font-weight:800}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em;background:var(--surface-2);padding:1px 6px;border-radius:6px;overflow-wrap:anywhere}
+.check{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.check label{display:flex;align-items:center;gap:8px;margin-left:auto;font-size:.85rem;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.check input{width:20px;height:20px;accent-color:var(--vert)}
+.prose{max-width:66ch;display:flex;flex-direction:column;gap:12px}
+footer.site{border-top:1px solid var(--line);padding-block:24px;color:var(--ink-2);font-size:.9rem}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:50;max-width:calc(100% - 32px)}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:900px){
+  .lesson-grid{grid-template-columns:minmax(0,1fr)}
+  .hero{grid-template-columns:1fr;gap:28px}
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .lesson-grid{grid-template-columns:1fr}
+  .toc{position:static;flex-direction:row;flex-wrap:wrap;gap:6px}
+  .toc a{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+  dl.stats{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:560px){
+  .wrap{padding-inline:16px}
+  .g4,.g3,.g2{grid-template-columns:1fr}
+  .li-item .opts{grid-template-columns:1fr}
+  .memory{grid-template-columns:repeat(3,1fr)}
+  .station .t{font-size:1.25rem}
+  .hello{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#home"><span class="flag" aria-hidden="true"><i></i><i></i><i></i></span>French with Rana</a>
+      <div class="account" id="account"></div>
+    </div>
+    <nav class="main" id="nav" aria-label="Main">
+      <a href="#home">🏠 Home</a>
+      <a href="#learn">📚 Learn French</a>
+      <a href="#games">🎮 Games</a>
+      <a href="#quiz">🧠 Quizzes</a>
+      <a href="#listening">🎧 Listening</a>
+      <a href="#speaking">🗣️ Speaking</a>
+      <a href="#homework">📝 Homework</a>
+      <a href="#progress">🏆 Progress</a>
+      <a href="#teacher" id="navTeacher" hidden>👩‍🏫 Teacher Area</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer class="site">
+  <div class="wrap row" style="justify-content:space-between">
+    <span>French with Rana · Free for every student, always.</span>
+    <span>Learn French. Play. Practice. Progress.</span>
+  </div>
+</footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =========================================================
+   SETUP · fill these in to use real accounts (Teacher Area → Setup guide)
+   ========================================================= */
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyDhHUZ-87O1eCWbfmFLIhZQ_chi_Y9VLRE",
+  authDomain: "french-with-rana.firebaseapp.com",
+  projectId: "french-with-rana",
+  storageBucket: "french-with-rana.firebasestorage.app",
+  messagingSenderId: "1056608294414",
+  appId: "1:1056608294414:web:f05dffbcc2db26ee21ce5f"
+};
+const TEACHER_EMAILS = ["frenchwithrana@gmail.com", "riman1998fa@gmail.com"];   /* only these emails can log in as teacher */
+
+/* =========================================================
+   FRENCH WITH RANA
+   All course content lives in COURSE and LESSONS below.
+   To add a lesson: copy the "a1-1" block, change the id
+   (e.g. "a1-2") and the content, then set open:true in COURSE.
+   ========================================================= */
+
+const COURSE = {
+  a1:{code:"A1", en:"Beginner", fr:"Débutant", c:"var(--m-a1)", lessons:[
+    {id:"a1-1", t:"Bonjour !", s:"Greetings and introducing yourself", open:true},
+    {id:"a1-2", t:"Les nombres et l'âge", s:"Numbers 0–20 and saying your age with avoir"},
+    {id:"a1-3", t:"Ma famille", s:"Family members and possessives: mon, ma, mes"},
+    {id:"a1-4", t:"Les couleurs et les vêtements", s:"Colours, clothes and adjective agreement"},
+    {id:"a1-5", t:"Ma journée", s:"Telling the time and regular -er verbs"},
+    {id:"a1-6", t:"Au café", s:"Ordering food and drinks with je voudrais"},
+    {id:"a1-7", t:"En ville", s:"Places in town, il y a, and asking the way"},
+    {id:"a1-8", t:"Mes loisirs", s:"Hobbies, aimer + infinitive, and faire"},
+    {id:"a1-9", t:"La météo et les saisons", s:"Weather, seasons and months"},
+    {id:"a1-10", t:"Le week-end dernier", s:"First steps with the passé composé"}
+  ]},
+  a2:{code:"A2", en:"Elementary", fr:"Élémentaire", c:"var(--m-a2)", lessons:[
+    {t:"Chez moi", s:"Describing your home and routine"},
+    {t:"Faire les courses", s:"Shopping, quantities and prices"},
+    {t:"Les vacances", s:"Passé composé with être"},
+    {t:"La santé", s:"The body and saying what hurts"},
+    {t:"Les transports", s:"Travel, tickets and timetables"},
+    {t:"Les fêtes françaises", s:"Culture, traditions and invitations"}
+  ]},
+  b1:{code:"B1", en:"Intermediate", fr:"Intermédiaire", c:"var(--m-b1)", lessons:[
+    {t:"Mes souvenirs", s:"Imparfait vs passé composé"},
+    {t:"Donner son avis", s:"Opinions, agreeing and disagreeing"},
+    {t:"Les médias", s:"News, social media and relative pronouns"},
+    {t:"L'environnement", s:"Problems, solutions and the futur simple"},
+    {t:"Projets d'avenir", s:"Plans, hopes and the conditionnel"},
+    {t:"Premiers pas avec le subjonctif", s:"Il faut que…"}
+  ]},
+  b2:{code:"B2", en:"Upper Intermediate", fr:"Avancé", c:"var(--m-b2)", lessons:[
+    {t:"Débattre", s:"Structuring an argument"},
+    {t:"Le monde du travail", s:"Formal letters and interviews"},
+    {t:"La francophonie", s:"French around the world"},
+    {t:"Cinéma et culture", s:"Reviews and nuanced vocabulary"},
+    {t:"Écrire un essai", s:"Connectors and the DELF B2 essay"},
+    {t:"Le subjonctif en nuances", s:"Doubt, emotion and concession"}
+  ]}
+};
+
+const LESSONS = {
+  "a1-1":{
+    id:"a1-1", level:"a1", num:1, title:"Bonjour !", sub:"Greetings and introducing yourself",
+    objectives:[
+      "Greet people and say goodbye at different times of day",
+      "Introduce yourself and ask someone's name",
+      "Ask how someone is, and answer",
+      "Choose between tu and vous"
+    ],
+    vocab:[
+      {fr:"Bonjour", en:"Hello / Good morning"},
+      {fr:"Bonsoir", en:"Good evening"},
+      {fr:"Salut", en:"Hi / Bye (informal)"},
+      {fr:"Au revoir", en:"Goodbye"},
+      {fr:"À bientôt", en:"See you soon"},
+      {fr:"Merci", en:"Thank you"},
+      {fr:"S'il vous plaît", en:"Please (formal)"},
+      {fr:"Enchanté(e)", en:"Nice to meet you", say:"Enchanté"},
+      {fr:"Comment tu t'appelles ?", en:"What's your name?"},
+      {fr:"Je m'appelle…", en:"My name is…", say:"Je m'appelle Rana"},
+      {fr:"Comment ça va ?", en:"How are you?"},
+      {fr:"Ça va bien", en:"I'm fine"},
+      {fr:"Et toi ?", en:"And you?"},
+      {fr:"Monsieur / Madame", en:"Sir / Madam", say:"Monsieur. Madame."}
+    ],
+    grammar:{
+      verb:[["je","m'appelle","my name is"],["tu","t'appelles","your name is (informal)"],["il / elle","s'appelle","his / her name is"],["vous","vous appelez","your name is (formal)"]],
+      tuvous:[["tu","Friends, family, children, classmates","Salut Léa, ça va ?"],["vous","Your teacher, adults you don't know, more than one person","Bonjour Madame, comment allez-vous ?"]]
+    },
+    examples:[
+      {fr:"Je m'appelle Rana.", en:"My name is Rana."},
+      {fr:"Il s'appelle Karim.", en:"His name is Karim."},
+      {fr:"Bonjour Madame, comment allez-vous ?", en:"Hello Madam, how are you? (formal)"},
+      {fr:"Salut Léa, ça va ?", en:"Hi Léa, how's it going? (informal)"},
+      {fr:"Merci, à bientôt !", en:"Thank you, see you soon!"}
+    ],
+    pron:[
+      {h:"Silent endings", p:"Most final consonants are silent. Salut sounds like “sa-lu”, and Monsieur sounds like “muh-syuh”.", say:"Salut. Monsieur."},
+      {h:"The nasal “on”", p:"In bonjour and bonsoir, say “on” through your nose without a strong n at the end.", say:"Bonjour. Bonsoir."},
+      {h:"The French R", p:"Make it at the back of your throat, like a very soft gargle. Practise with merci and au revoir.", say:"Merci. Au revoir."},
+      {h:"The letter ç", p:"The little tail (cédille) makes c sound like s: ça va.", say:"Ça va ?"}
+    ],
+    dialogue:[
+      {who:"Léa", fr:"Salut ! Je m'appelle Léa. Et toi, comment tu t'appelles ?", en:"Hi! My name is Léa. And you, what's your name?", pitch:1.15},
+      {who:"Karim", fr:"Salut Léa ! Je m'appelle Karim. Enchanté !", en:"Hi Léa! My name is Karim. Nice to meet you!", pitch:.8, r:true},
+      {who:"Léa", fr:"Enchantée ! Ça va ?", en:"Nice to meet you! How are you?", pitch:1.15},
+      {who:"Karim", fr:"Ça va bien, merci. Et toi ?", en:"I'm fine, thanks. And you?", pitch:.8, r:true},
+      {who:"Léa", fr:"Très bien ! Oh, voilà Madame Rana.", en:"Very well! Oh, here's Mrs Rana.", pitch:1.15},
+      {who:"Karim", fr:"Bonjour Madame ! Comment allez-vous ?", en:"Hello Madam! How are you?", pitch:.8, r:true},
+      {who:"Rana", fr:"Bonjour Karim, bonjour Léa ! Je vais bien, merci.", en:"Hello Karim, hello Léa! I'm well, thank you.", pitch:1.05}
+    ],
+    listening:[
+      {say:"Bonsoir !", o:["Good evening!","Good morning!","Goodbye!"]},
+      {say:"Comment tu t'appelles ?", o:["What's your name?","How are you?","Where do you live?"]},
+      {say:"À bientôt !", o:["See you soon!","Thank you!","Nice to meet you!"]},
+      {say:"Ça va bien, merci.", o:["I'm fine, thank you.","My name is Ben.","Please, sir."]},
+      {say:"Enchantée !", o:["Nice to meet you!","Good evening!","And you?"]},
+      {say:"Au revoir, Madame.", o:["Goodbye, madam.","Hello, sir.","Thank you, madam."]}
+    ],
+    exercise:[
+      {a:"Je m'", b:" Rana.", ans:["appelle"], hint:"s'appeler, je"},
+      {a:"Comment tu t'", b:" ?", ans:["appelles"], hint:"s'appeler, tu"},
+      {a:"Elle s'", b:" Léa.", ans:["appelle"], hint:"s'appeler, elle"},
+      {a:"Bonjour Madame, comment allez-", b:" ?", ans:["vous"], hint:"formal"},
+      {a:"Salut Tom ! Ça ", b:" ?", ans:["va"], hint:"How's it going?"},
+      {a:"Merci, au ", b:" !", ans:["revoir"], hint:"Goodbye"}
+    ],
+    quiz:[
+      {q:"How do you say “Good evening” in French?", o:["Bonsoir","Bonjour","Salut","Bonne nuit"], e:"Bonsoir is used from late afternoon onwards. Bonne nuit is only for going to bed."},
+      {q:"“Je m'appelle Karim” means…", o:["My name is Karim","I like Karim","I call Karim","Karim is here"], e:"S'appeler means “to be called”."},
+      {q:"Which greeting is only for friends and family?", o:["Salut","Bonjour","Bonsoir","Au revoir"], e:"Salut is informal. Bonjour works with everyone."},
+      {q:"You are speaking to your teacher. Which word do you use?", o:["vous","tu","toi","te"], e:"Use vous to be polite with teachers and adults you don't know well."},
+      {q:"Complete: Comment tu t'_______ ?", o:["appelles","appelle","appeler","appelez"], e:"With tu, the verb ends in -es: tu t'appelles."},
+      {q:"“À bientôt” means…", o:["See you soon","Good night","Welcome","Thank you"], e:"Bientôt means “soon”."},
+      {q:"A woman writes “Nice to meet you”. Which spelling is correct?", o:["Enchantée","Enchanté","Enchantés","Enchanter"], e:"Add an extra -e when the speaker is female. Both sound the same."},
+      {q:"Someone asks “Ça va ?”. What is the best answer?", o:["Ça va bien, merci.","Je m'appelle Léa.","Au revoir.","S'il vous plaît."], e:"Ça va ? asks how you are. Ça va bien = I'm fine."},
+      {q:"In the word “salut”, the final t is…", o:["silent","pronounced like an English t","pronounced like d","pronounced like s"], e:"Most final consonants in French are silent."},
+      {q:"“S'il vous plaît” means…", o:["Please","Thank you","Sorry","You're welcome"], e:"Use s'il vous plaît (formal) or s'il te plaît (informal)."}
+    ],
+    speaking:["Bonjour !","Bonsoir !","Je m'appelle …","Comment tu t'appelles ?","Comment ça va ?","Ça va bien, merci. Et toi ?","Enchanté !","Au revoir, à bientôt !"],
+    homework:[
+      {h:"Introduce yourself", p:"Write 5 short sentences: greet the reader, give your name, say how you are, say one polite word, and say goodbye.", model:"Bonjour ! Je m'appelle Sara. Ça va très bien. Merci ! Au revoir, à bientôt !"},
+      {h:"Write a formal dialogue", p:"Write 4 lines between you and your teacher. Use vous, not tu."},
+      {h:"Translate into French", p:"1. Good evening  2. See you soon  3. My name is…  4. Thank you  5. Nice to meet you  6. Please (formal)"},
+      {h:"Listen and repeat", p:"Go to 🗣️ Speaking and say every phrase 3 times. Optional: record yourself with your phone's voice recorder and send it to your teacher."}
+    ],
+    key:{
+      exercise:"1. appelle · 2. appelles · 3. appelle · 4. vous · 5. va · 6. revoir",
+      translate:"1. Bonsoir · 2. À bientôt · 3. Je m'appelle… · 4. Merci · 5. Enchanté(e) · 6. S'il vous plaît"
+    },
+    scramble:[["BONJOUR","Hello"],["MERCI","Thank you"],["SALUT","Hi (informal)"],["BONSOIR","Good evening"],["MADAME","Madam"],["MONSIEUR","Sir"]],
+    dialogueTitle:"Dialogue: à l'école"
+  },
+
+  /* ---------- CLASS TOPIC: Identifier des objets ---------- */
+  "objets":{
+    id:"objets", level:"a1", cls:true, title:"Identifier des objets", sub:"Everyday objects, un / une / des, and Qu'est-ce que c'est ?",
+    objectives:[
+      "Name everyday objects from your bag and your desk",
+      "Choose un, une or des in front of a noun",
+      "Ask and answer: Qu'est-ce que c'est ? C'est un… / Ce sont des…",
+      "Say something is no longer there with ne… plus"
+    ],
+    vocab:[
+      {fr:"un stylo", en:"a pen", pic:"🖊️", art:"un", n:"stylo"},
+      {fr:"une gomme", en:"an eraser", art:"une", n:"gomme"},
+      {fr:"un crayon", en:"a pencil", pic:"✏️", art:"un", n:"crayon"},
+      {fr:"un livre", en:"a book", pic:"📕", art:"un", n:"livre"},
+      {fr:"un cahier", en:"a notebook", pic:"📓", art:"un", n:"cahier"},
+      {fr:"une trousse", en:"a pencil case", art:"une", n:"trousse"},
+      {fr:"un téléphone", en:"a phone", pic:"📱", art:"un", n:"téléphone"},
+      {fr:"des lunettes", en:"glasses", pic:"👓", art:"des", n:"lunettes"},
+      {fr:"des clés", en:"keys", pic:"🔑", art:"des", n:"clés"},
+      {fr:"un sac", en:"a bag", pic:"🎒", art:"un", n:"sac"},
+      {fr:"un portefeuille", en:"a wallet", pic:"👛", art:"un", n:"portefeuille"},
+      {fr:"une pièce d'identité", en:"an ID card", pic:"🪪", art:"une", n:"pièce d'identité"},
+      {fr:"un appareil photo", en:"a camera", pic:"📷", art:"un", n:"appareil photo"},
+      {fr:"un doudou", en:"a cuddly toy", pic:"🧸", art:"un", n:"doudou"},
+      {fr:"une table", en:"a table", art:"une", n:"table"},
+      {fr:"un rond", en:"a circle", pic:"⚪", art:"un", n:"rond"},
+      {fr:"un carré", en:"a square", pic:"🟦", art:"un", n:"carré"},
+      {fr:"un triangle", en:"a triangle", pic:"🔺", art:"un", n:"triangle"},
+      {fr:"un rectangle", en:"a rectangle", pic:"▭", art:"un", n:"rectangle"}
+    ],
+    grammarView:()=>`
+      <p><b>Les articles indéfinis</b> mean “a”, “an” or “some”. Every French noun is masculine or feminine, so learn each word with its article.</p>
+      <div class="tablewrap"><table><thead><tr><th></th><th>Article</th><th>Example</th><th></th></tr></thead><tbody>
+        <tr><td>Masculine</td><td><b>un</b></td><td>C'est <b>un</b> téléphone.</td><td>${sayBtn("C'est un téléphone.")}</td></tr>
+        <tr><td>Feminine</td><td><b>une</b></td><td>C'est <b>une</b> pièce d'identité.</td><td>${sayBtn("C'est une pièce d'identité.")}</td></tr>
+        <tr><td>Plural</td><td><b>des</b></td><td>Ce sont <b>des</b> clés.</td><td>${sayBtn("Ce sont des clés.")}</td></tr>
+      </tbody></table></div>
+      <p class="note">Ask: <b>Qu'est-ce que c'est ?</b> (What is it?)<br>Answer with <b>C'est</b> + un / une (one thing) or <b>Ce sont</b> + des (more than one).</p>
+      <p style="margin-top:6px"><b>Ne… plus</b> means “no longer / not any more”. Put <b>ne</b> (or n') before the verb and <b>plus</b> after it.</p>
+      <div class="tablewrap"><table><thead><tr><th>Before</th><th>After</th></tr></thead><tbody>
+        <tr><td><div class="row" style="flex-wrap:nowrap">${sayBtn("Le stylo est sur la table.")}<span>Le stylo <b>est</b> sur la table.</span></div></td><td><div class="row" style="flex-wrap:nowrap">${sayBtn("Le stylo n'est plus sur la table.")}<span>Le stylo <b>n'est plus</b> sur la table.</span></div></td></tr>
+        <tr><td><div class="row" style="flex-wrap:nowrap">${sayBtn("Les clés sont dans le sac.")}<span>Les clés <b>sont</b> dans le sac.</span></div></td><td><div class="row" style="flex-wrap:nowrap">${sayBtn("Les clés ne sont plus dans le sac.")}<span>Les clés <b>ne sont plus</b> dans le sac.</span></div></td></tr>
+      </tbody></table></div>`,
+    examples:[
+      {fr:"Qu'est-ce que c'est ? C'est un stylo.", en:"What is it? It's a pen."},
+      {fr:"C'est une gomme.", en:"It's an eraser."},
+      {fr:"Ce sont des lunettes.", en:"They're glasses."},
+      {fr:"Le téléphone n'est plus sur la table.", en:"The phone isn't on the table any more."},
+      {fr:"Dans mon sac, il y a un livre, une trousse et des clés.", en:"In my bag there's a book, a pencil case and some keys."}
+    ],
+    pron:[
+      {h:"un: lips stretched", p:"Say un with your lips pulled wide, like a small smile. The sound is nasal and there's no n at the end.", say:"un. un stylo. un livre."},
+      {h:"une: lips rounded", p:"Say une with your lips rounded and pushed forward, as if you want to whistle. You can hear the n.", say:"une. une gomme. une trousse."},
+      {h:"des: like “day”", p:"Des sounds like “day”. Before a vowel, the s becomes a z sound: des_amis.", say:"des clés. des lunettes."},
+      {h:"Qu'est-ce que c'est ?", p:"Say it as one quick word: “kess-kuh-say”.", say:"Qu'est-ce que c'est ?"}
+    ],
+    dialogueTitle:"Dialogue: Où sont mes clés ?",
+    dialogue:[
+      {who:"Inès", fr:"Zut ! Où sont mes clés ?", en:"Oh no! Where are my keys?", pitch:1.15},
+      {who:"Hugo", fr:"Elles sont dans ton sac ?", en:"Are they in your bag?", pitch:.8, r:true},
+      {who:"Inès", fr:"Non. Dans mon sac, il y a un livre, une trousse et des lunettes.", en:"No. In my bag there's a book, a pencil case and glasses.", pitch:1.15},
+      {who:"Hugo", fr:"Et ça, sur la table, qu'est-ce que c'est ?", en:"And that, on the table, what is it?", pitch:.8, r:true},
+      {who:"Inès", fr:"C'est un téléphone. Ce n'est pas mon téléphone !", en:"It's a phone. It's not my phone!", pitch:1.15},
+      {who:"Hugo", fr:"Regarde ! Ce sont des clés, là, sous le cahier.", en:"Look! Those are keys, there, under the notebook.", pitch:.8, r:true},
+      {who:"Inès", fr:"Oui ! Ce sont mes clés. Merci Hugo !", en:"Yes! Those are my keys. Thanks Hugo!", pitch:1.15}
+    ],
+    listening:[
+      {say:"C'est un stylo.", o:["It's a pen.","It's a book.","It's a bag."]},
+      {say:"Ce sont des clés.", o:["They're keys.","They're glasses.","It's a wallet."]},
+      {say:"C'est une gomme.", o:["It's an eraser.","It's a phone.","It's a notebook."]},
+      {say:"Qu'est-ce que c'est ?", o:["What is it?","Where is it?","Who is it?"]},
+      {say:"Le téléphone n'est plus sur la table.", o:["The phone isn't on the table any more.","The phone is on the table.","The phone is in the bag."]},
+      {say:"C'est une pièce d'identité.", o:["It's an ID card.","It's a camera.","It's a pencil case."]}
+    ],
+    exercise:[
+      {a:"C'est ", b:" stylo.", ans:["un"], hint:"masculine"},
+      {a:"C'est ", b:" gomme.", ans:["une"], hint:"feminine"},
+      {a:"Ce sont ", b:" lunettes.", ans:["des"], hint:"plural"},
+      {a:"C'est ", b:" trousse.", ans:["une"], hint:"feminine"},
+      {a:"Ce sont ", b:" clés.", ans:["des"], hint:"plural"},
+      {a:"", b:" est-ce que c'est ?", ans:["qu'","qu"], hint:"What is it?"},
+      {a:"Le stylo n'est ", b:" sur la table.", ans:["plus"], hint:"no longer"},
+      {a:"Dans mon sac, il y ", b:" un livre.", ans:["a"], hint:"there is"}
+    ],
+    quiz:[
+      {q:"How do you say “a pen”?", o:["un stylo","une stylo","des stylo","un gomme"], e:"Stylo is masculine: un stylo."},
+      {q:"Which article goes with “gomme”?", o:["une","un","des","le"], e:"Gomme is feminine: une gomme."},
+      {q:"“Ce sont des lunettes” means…", o:["They're glasses.","It's a phone.","Where are my glasses?","I have glasses."], e:"Ce sont + des is for more than one thing."},
+      {q:"What does “Qu'est-ce que c'est ?” mean?", o:["What is it?","Where is it?","How are you?","Who is it?"], e:"Answer with C'est… or Ce sont…"},
+      {q:"Complete: Ce sont _____ clés.", o:["des","un","une","la"], e:"Clés is plural, so use des."},
+      {q:"🎒 Qu'est-ce que c'est ?", o:["C'est un sac.","C'est une trousse.","C'est un livre.","Ce sont des clés."], e:"🎒 = un sac."},
+      {q:"“Le stylo n'est plus sur la table” means…", o:["The pen isn't on the table any more.","The pen is on the table.","There are more pens on the table.","The pen is under the table."], e:"Ne… plus = no longer, not any more."},
+      {q:"Which one is feminine?", o:["une trousse","un cahier","un portefeuille","un téléphone"], e:"Trousse is feminine: une trousse."},
+      {q:"When you say “une”, your lips are…", o:["rounded","stretched wide","closed","relaxed"], e:"Une: lips rounded. Un: lips stretched."},
+      {q:"🔺 How do you say this shape?", o:["un triangle","un carré","un rond","un rectangle"], e:"🔺 = un triangle. ⚪ = un rond, 🟦 = un carré."}
+    ],
+    speaking:["Qu'est-ce que c'est ?","C'est un stylo.","C'est une gomme.","Ce sont des clés.","Ce sont des lunettes.","Où sont mes clés ?","Le stylo n'est plus sur la table.","Dans mon sac, il y a un livre, une trousse et un téléphone."],
+    homework:[
+      {h:"What's in your bag?", p:"Write the list of objects in your school bag. Start with: Dans mon sac, il y a… Use un, une and des.", model:"Dans mon sac, il y a un livre, deux cahiers, une trousse, des stylos et un téléphone."},
+      {h:"Draw and ask", p:"Draw 4 objects using only a circle, a square, a triangle or a rectangle. Under each drawing write the question and the answer.", model:"Qu'est-ce que c'est ? C'est un téléphone."},
+      {h:"Un, une or des?", p:"Write the article: 1. ___ livre  2. ___ trousse  3. ___ clés  4. ___ portefeuille  5. ___ pièce d'identité  6. ___ lunettes"},
+      {h:"Ne… plus", p:"Your friend takes 3 objects off your desk. Write 3 sentences, for example: La gomme n'est plus sur la table."}
+    ],
+    key:{
+      exercise:"1. un · 2. une · 3. des · 4. une · 5. des · 6. Qu' · 7. plus · 8. a",
+      translate:"Un, une or des: 1. un · 2. une · 3. des · 4. un · 5. une · 6. des"
+    },
+    scramble:[["STYLO","a pen"],["GOMME","an eraser"],["LIVRE","a book"],["TROUSSE","a pencil case"],["CLÉS","keys"],["LUNETTES","glasses"],["CAHIER","a notebook"],["CRAYON","a pencil"]]
+  }
+};
+
+/* Class topics appear under "From class" on the Home and Learn pages. Newest first. */
+const CLASS_TOPICS = ["objets"];
+
+const BADGES = [
+  {id:"premier", icon:"🎒", name:"Premier pas", d:"Complete your first lesson"},
+  {id:"debut", icon:"🧠", name:"Bon début", d:"Finish a quiz"},
+  {id:"sansfaute", icon:"🏅", name:"Sans faute", d:"Score 100% on a quiz"},
+  {id:"joueur", icon:"🎮", name:"Joueur", d:"Finish any game"},
+  {id:"memoire", icon:"🐘", name:"Mémoire d'éléphant", d:"Win Memory in 10 moves or fewer"},
+  {id:"oreille", icon:"🎧", name:"Oreille fine", d:"Get every listening answer right"},
+  {id:"plume", icon:"✍️", name:"Plume d'or", d:"Get every exercise answer right"},
+  {id:"bavard", icon:"🗣️", name:"Bavard", d:"Practise every speaking phrase"}
+];
+
+/* ---------- helpers ---------- */
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = s=>String(s).normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[’`]/g,"'").replace(/[^a-z' -]/g,"").trim();
+const shuffle = a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const SPK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+const sayBtn = (t,label)=>`<button class="say" data-say="${esc(t)}" aria-label="Listen: ${esc(label||t)}">${SPK}</button>`;
+const slowBtn = t=>`<button class="say slow" data-say="${esc(t)}" data-slow="1" aria-label="Listen slowly">Slow</button>`;
+
+/* ---------- progress state ----------
+   Logged-in students: progress is saved online automatically.
+   Guests: progress stays in this browser only. */
+const KEY="french-with-rana-v1";
+const PREFS="french-with-rana-prefs";
+const blankProgress=()=>({done:{},quizBest:{},games:0,badges:{},spoken:{},goals:{},counts:{}});
+function guestProgress(){let g={};try{g=JSON.parse(localStorage.getItem(KEY))||{}}catch(e){}return Object.assign(blankProgress(),g)}
+let S=guestProgress();
+let PREF={};try{PREF=JSON.parse(localStorage.getItem(PREFS))||{}}catch(e){}
+function savePrefs(){try{localStorage.setItem(PREFS,JSON.stringify(PREF))}catch(e){}}
+let ME=null;            /* the logged-in person: {uid,name,cls,role,username|email} */
+let saveT, pendingSave=null;
+async function flushSave(){clearTimeout(saveT);if(pendingSave)await pendingSave()}
+const isStudent=()=>!!(ME&&ME.role==="student");
+const isTeacher=()=>!!(ME&&ME.role==="teacher");
+function save(){
+  if(isStudent()){clearTimeout(saveT);const uid=ME.uid;pendingSave=()=>{pendingSave=null;return API.saveProgress(uid,JSON.parse(JSON.stringify(S))).catch(()=>toast("Couldn't save. Check your internet."))};saveT=setTimeout(()=>pendingSave&&pendingSave(),500)}
+  else{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+}
+/* Records one finished activity for the teacher's dashboard */
+function record(e){
+  const t=e.type;if(t!=="login"&&t!=="register"){S.counts[t]=(S.counts[t]||0)+1;save()}
+  if(!isStudent())return;
+  API.log({...e,uid:ME.uid,name:ME.name,cls:ME.cls||"",at:Date.now()}).catch(()=>{});
+  API.touch(ME.uid).catch(()=>{});
+}
+
+let toastT;
+function toast(msg){const t=$("#toast");t.textContent=msg;t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),2800)}
+function award(id){if(S.badges[id])return;S.badges[id]=Date.now();save();const b=BADGES.find(x=>x.id===id);toast(`${b.icon} Badge unlocked: ${b.name}`)}
+
+/* ---------- speech (free, built into the browser) ---------- */
+let frVoice=null, frVoices=[];
+/* Prefer a soft female French voice. Which voices exist depends on the student's phone or computer. */
+const FEMALE=/denise|vivienne|eloise|brigitte|coralie|jacqueline|josephine|yvette|audrey|aur[ée]lie|am[ée]lie|marie|julie|hortense|c[ée]line|chantal|virginie|sylvie|l[ée]a\b|ariane|charlotte|google fran|female|femme/i;
+const MALE=/thomas|henri|paul|claude|nicolas|daniel|r[ée]my|j[ée]r[ôo]me|antoine|jean|fabrice|g[ée]rard|guillaume|alain|mathieu|yves|maurice|lucien|pierre|\bmale\b|homme/i;
+function voiceScore(v){let n=0;if(/^fr[-_]FR/i.test(v.lang))n+=2;if(FEMALE.test(v.name))n+=6;if(MALE.test(v.name))n-=10;if(/natural|online|enhanced|premium|neural/i.test(v.name))n+=2;return n}
+function pickVoice(){
+  frVoices=speechSynthesis.getVoices().filter(x=>/^fr/i.test(x.lang));
+  const chosen=PREF.voice&&frVoices.find(v=>v.voiceURI===PREF.voice);
+  frVoice=chosen||[...frVoices].sort((a,b)=>voiceScore(b)-voiceScore(a))[0]||null;
+  const sel=document.getElementById("voice-pick");if(sel)fillVoicePick(sel);
+}
+if("speechSynthesis" in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
+function speak(text,o={}){
+  if(!("speechSynthesis" in window)){toast("Audio isn't available in this browser. Try Chrome or Safari.");return}
+  const u=new SpeechSynthesisUtterance(text.replace(/…/g,""));
+  u.lang="fr-FR";if(frVoice)u.voice=frVoice;u.rate=o.slow?.6:.85;u.pitch=o.pitch||1.08;u.volume=.9;
+  if(!o.queue)speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-say]");if(b)speak(b.dataset.say,{slow:!!b.dataset.slow})});
+
+/* ---------- views ---------- */
+let CUR = CLASS_TOPICS[0] || "a1-1";          /* the topic games, quizzes etc. use */
+const CL = ()=>LESSONS[CUR];
+let ACTS = [];                                 /* activities the teacher added */
+let SETTINGS = {classes:[]};
+const customIds=()=>ACTS.filter(a=>a.kind!=="goal").sort((a,b)=>b.createdAt-a.createdAt).map(a=>"act-"+a.id);
+const allTopicIds=()=>[...customIds(),...CLASS_TOPICS,"a1-1"];
+const FILTERS={
+  games:L=>L.vocab&&L.vocab.length>=4,
+  quiz:L=>L.quiz&&L.quiz.length,
+  listening:L=>L.listening&&L.listening.length,
+  speaking:L=>L.speaking&&L.speaking.length,
+  homework:L=>L.homework&&L.homework.length
+};
+const topicsFor=route=>allTopicIds().filter(id=>LESSONS[id]&&FILTERS[route](LESSONS[id]));
+const topicLabel = L=>L.custom||L.cls?L.title:`A1 Lesson ${L.num} · ${L.title}`;
+function pickTopic(arg,route){
+  const ok=topicsFor(route);
+  if(arg&&ok.includes(arg))CUR=arg;
+  else if(!ok.includes(CUR))CUR=ok[0];
+}
+function topicIcon(L){return L.custom?'<span class="pin star">⭐</span>':L.cls?'<span class="pin">📌</span>':'<span class="lb sm" style="--c:var(--m-a1)">A1</span>'}
+function topicBar(route){
+  return `<div class="tabs" role="group" aria-label="Topic">${topicsFor(route).map(id=>{const L=LESSONS[id];
+    return `<a class="topic-chip" href="#${route}-${id}" aria-current="${id===CUR?"true":"false"}">${topicIcon(L)}${esc(topicLabel(L))}${L.custom&&(Date.now()-L.act.createdAt<7*864e5)?'<span class="chip new">New</span>':""}</a>`}).join("")}</div>`;
+}
+
+/* Turn an activity the teacher wrote into a topic the games and quizzes can use */
+const stripArt=s=>s.replace(/^(un|une|des|le|la|les)\s+/i,"").replace(/^l['’]/i,"");
+function actToLesson(a){
+  const L={id:"act-"+a.id,custom:true,act:a,title:a.title,sub:a.note||"",level:"a1"};
+  if(a.kind==="words"){
+    L.vocab=a.words;
+    L.scramble=a.words.map(w=>[stripArt(w.fr).toUpperCase(),w.en]).filter(([w])=>/^[A-ZÀ-Ÿ]{3,10}$/.test(w)).slice(0,8);
+    L.speaking=a.words.map(w=>w.fr);
+    L.quiz=shuffle(a.words).slice(0,10).map((w,i)=>{
+      const others=shuffle(a.words.filter(x=>x!==w)).slice(0,3);
+      return i%2?{q:`How do you say “${w.en}” in French?`,o:[w.fr,...others.map(x=>x.fr)],e:`${w.en} = ${w.fr}`}
+                :{q:`What does “${w.fr}” mean?`,o:[w.en,...others.map(x=>x.en)],e:`${w.fr} = ${w.en}`};
+    });
+    L.listening=shuffle(a.words).slice(0,6).map(w=>({say:w.fr,o:[w.en,...shuffle(a.words.filter(x=>x!==w)).slice(0,2).map(x=>x.en)]}));
+  }
+  if(a.kind==="quiz")L.quiz=a.questions.map(q=>({q:q.q,o:[q.a,...q.w.filter(Boolean)],e:q.e||""}));
+  if(a.kind==="listening")L.listening=a.items.map(i=>({say:i.fr,o:[i.en,...i.w.filter(Boolean)]}));
+  if(a.kind==="speaking")L.speaking=a.phrases;
+  if(a.kind==="homework"){L.homework=[{h:a.title,p:a.text}];L.due=a.due||""}
+  return L;
+}
+function applyActs(list){
+  Object.keys(LESSONS).filter(k=>k.startsWith("act-")).forEach(k=>delete LESSONS[k]);
+  ACTS=list.filter(a=>isTeacher()||!a.cls||!ME||a.cls===ME.cls);
+  ACTS.filter(a=>a.kind!=="goal").forEach(a=>{LESSONS["act-"+a.id]=actToLesson(a)});
+  if(!LESSONS[CUR])CUR=CLASS_TOPICS[0]||"a1-1";
+}
+async function loadActs(){
+  if(!ME){applyActs([]);return}
+  try{applyActs(await API.activities())}catch(e){applyActs([])}
+}
+
+function classStrip(){
+  return `<div class="grid g2">${CLASS_TOPICS.map(id=>{const L=LESSONS[id];return `
+    <a class="tile-link class-card" href="#lesson-${id}">
+      <p class="eyebrow">📌 From class${S.done[id]?' · <span class="chip ok">Completed</span>':""}</p>
+      <h3 style="font-family:var(--font-d);font-weight:400;font-size:1.8rem;line-height:1.1">${esc(L.title)}</h3>
+      <p>${esc(L.sub)}</p>
+      <div class="pics" aria-hidden="true">${L.vocab.filter(v=>v.pic).slice(0,8).map(v=>`<span>${v.pic}</span>`).join("")}</div>
+    </a>`}).join("")}</div>`;
+}
+const SECTION_OF={words:"games",quiz:"quiz",listening:"listening",speaking:"speaking",homework:"homework",goal:"progress"};
+const KIND_LABEL={words:"🎮 Word games",quiz:"🧠 Quiz",listening:"🎧 Listening",speaking:"🗣️ Speaking",homework:"📝 Homework",goal:"🎯 Class goal"};
+function actLink(a){return a.kind==="goal"?"#progress":`#${SECTION_OF[a.kind]}-act-${a.id}`}
+function newFromTeacher(n){
+  const list=[...ACTS].sort((a,b)=>b.createdAt-a.createdAt).slice(0,n);
+  if(!list.length)return `<p class="muted">Nothing new yet. Your teacher's activities will appear here.</p>`;
+  return `<div class="grid g3">${list.map(a=>`<a class="tile-link" href="${actLink(a)}"><p class="eyebrow">${KIND_LABEL[a.kind]}${Date.now()-a.createdAt<7*864e5?' <span class="chip new">New</span>':""}</p><h3>${esc(a.title)}</h3>${a.due?`<p>Due ${esc(fmtDate(a.due))}</p>`:a.note?`<p>${esc(a.note)}</p>`:""}</a>`).join("")}</div>`;
+}
+
+function home(){
+  const nm = ME ? `, <em class="accent">${esc(ME.name.split(" ")[0])}</em>` : "";
+  return `<div class="stack" style="gap:48px">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">Bienvenue${ME?"":" !"}</p>
+      <h1 style="margin-top:10px">${ME?`Bonjour${nm} !`:`Learn French.<br>Play. Practice.<br><em class="accent">Progress.</em>`}</h1>
+      <p class="lead">Free lessons, games, quizzes and listening practice from your teacher, Rana. Everything here is free for every student, always.</p>
+      <div class="row">${isStudent()?`<a class="btn" href="#dashboard">My dashboard</a>`:isTeacher()?`<a class="btn" href="#teacher">Teacher dashboard</a>`:`<a class="btn" href="#register">Create my account</a><a class="btn ghost" href="#login">Log in</a>`}<a class="btn ghost" href="#lesson-${CLASS_TOPICS[0]||"a1-1"}">This week's topic</a></div>
+    </div>
+    <div class="ticket">
+      <div class="top"><span class="lb" style="--c:var(--m-a1)">A1</span><div><p class="eyebrow">Ligne A1 · Débutant</p><p style="font-weight:700">Next stop</p></div></div>
+      <div class="body">
+        <p style="font-family:var(--font-d);font-size:2.2rem;line-height:1">${S.done["a1-1"]?"Les nombres":"Bonjour !"}</p>
+        <p class="muted" style="font-size:.92rem">${S.done["a1-1"]?"Lesson 2 is on its way. Keep practising Lesson 1 while you wait.":"Greetings and introducing yourself"}</p>
+        <div class="mini-line" aria-hidden="true">${Array.from({length:10},(_,i)=>`<span class="${(S.done["a1-1"]?i<=1:i===0)?"here":""}"></span>`).join("")}</div>
+        <div class="labels"><span>Bonjour</span><span>10 stations to A2</span></div>
+      </div>
+    </div>
+  </section>
+
+  ${ME?"":`<section class="card row" style="justify-content:space-between">
+    <div><h3>Save your progress</h3><p class="muted" style="font-size:.92rem">Log in so your scores, badges and homework are saved and your teacher can follow your progress.</p></div>
+    <div class="row"><a class="btn" href="#login">Log in</a><a class="btn ghost" href="#register">Create an account</a></div>
+  </section>`}
+
+  ${ME&&ACTS.length?`<section class="stack" style="gap:16px"><div><p class="eyebrow">From your teacher</p><h2>New activities</h2></div>${newFromTeacher(3)}</section>`:""}
+
+  ${CLASS_TOPICS.length?`<section class="stack" style="gap:16px"><div><p class="eyebrow">This week in class</p><h2>Practise what we did today</h2></div>${classStrip()}</section>`:""}
+
+  <section class="stack" style="gap:16px">
+    <div><p class="eyebrow">Choose your line</p><h2>Four levels, one journey</h2></div>
+    <div class="grid g4">${Object.entries(COURSE).map(([k,l])=>`
+      <a class="tile-link level-card" href="#learn-${k}">
+        <div class="row"><span class="lb ${k==="a2"?"a2":""}" style="--c:${l.c}">${l.code}</span><div><span class="fr">${l.fr}</span><p style="font-size:.85rem">${l.en}</p></div></div>
+        <p>${l.lessons.length} lessons${k==="a1"?" · Lesson 1 open now":" · coming soon"}</p>
+      </a>`).join("")}</div>
+  </section>
+
+  <section class="stack" style="gap:16px">
+    <div><p class="eyebrow">Practise</p><h2>Play, listen, speak</h2></div>
+    <div class="grid g3">
+      ${[["#games","🎮","Games","Picture games, matching, memory cards and more."],["#quiz","🧠","Quizzes","Instant score, percentage and badges."],["#listening","🎧","Listening","Hear real French and choose the meaning."],["#speaking","🗣️","Speaking","Listen, repeat and tick off each phrase."],["#homework","📝","Homework","Tasks from your teacher. Send your answers here."],["#progress","🏆","Progress","Your lessons, scores and achievements."]]
+      .map(([h,i,t,p])=>`<a class="tile-link" href="${h}"><span class="ico">${i}</span><h3>${t}</h3><p>${p}</p></a>`).join("")}
+    </div>
+  </section>
+  </div>`;
+}
+
+let learnLevel="a1";
+function learn(arg){
+  if(arg&&COURSE[arg])learnLevel=arg;
+  const l=COURSE[learnLevel];
+  return `<div class="stack">
+    <div><p class="eyebrow">📚 Learn French</p><h1>Choose your line</h1><p class="muted" style="margin-top:10px;max-width:60ch">Each level is a métro line and each lesson is a station. Topics from class are pinned at the top.</p></div>
+    ${CLASS_TOPICS.length?classStrip():""}
+    <div class="tabs" role="group" aria-label="Level">${Object.entries(COURSE).map(([k,v])=>`<button data-level="${k}" aria-pressed="${k===learnLevel}"><span class="lb sm ${k==="a2"?"a2":""}" style="--c:${v.c}">${v.code}</span>${v.en}</button>`).join("")}</div>
+    <div class="line" style="--c:${l.c}">
+      ${l.lessons.map((s,i)=>{
+        const ok=s.open, done=s.id&&S.done[s.id];
+        return `<div class="station ${ok?"open":""}">
+          <div><p class="n">Station ${i+1}</p><p class="t">${esc(s.t)}</p><p class="s">${esc(s.s)}</p></div>
+          ${ok?`<div class="row">${done?'<span class="chip ok">Completed</span>':""}<a class="btn small" href="#lesson-${s.id}">${done?"Review":"Start"}</a></div>`:'<span class="chip">Coming soon</span>'}
+        </div>`}).join("")}
+    </div>
+  </div>`;
+}
+
+const PARTS=[["obj","Objectives"],["vocab","Vocabulary"],["grammar","Grammar"],["examples","Examples"],["pron","Pronunciation"],["dialogue","Dialogue"],["listen","Listening"],["exercise","Exercise"],["game","Game"],["quizp","Quiz"],["hw","Homework"],["key","Answer key"]];
+function part(i,id,title,inner){return `<section class="part" id="${id}"><header><span class="num">${i}</span><h2>${title}</h2></header>${inner}</section>`}
+const WHO_COLORS=["var(--m-b2)","var(--m-b1)","var(--m-a1)"];
+
+function lesson1Grammar(L){return `
+  <p><b>S'appeler</b> means “to be called”. It is how French people say their name.</p>
+  <div class="tablewrap"><table><thead><tr><th>Subject</th><th>Verb</th><th>Meaning</th><th></th></tr></thead><tbody>
+  ${L.grammar.verb.map(r=>`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td><td class="muted">${r[2]}</td><td>${sayBtn(r[0].split(" /")[0]+" "+r[1])}</td></tr>`).join("")}</tbody></table></div>
+  <p class="note">Before a vowel, <b>me, te, se</b> lose their e: je <b>m'</b>appelle. With je, tu, il and elle, the word has a double <b>ll</b>.</p>
+  <p style="margin-top:6px"><b>Tu or vous?</b> French has two words for “you”.</p>
+  <div class="tablewrap"><table><thead><tr><th>Word</th><th>Use it with</th><th>Example</th></tr></thead><tbody>
+  ${L.grammar.tuvous.map(r=>`<tr><td><b>${r[0]}</b></td><td>${r[1]}</td><td><div class="row" style="flex-wrap:nowrap">${sayBtn(r[2])}<span>${r[2]}</span></div></td></tr>`).join("")}</tbody></table></div>`}
+
+function lesson(arg){
+  const L=LESSONS[arg];
+  if(!L||L.custom)return `<div class="stack"><h1>Coming soon</h1><p class="muted">This lesson isn't ready yet.</p><p><a class="btn" href="#learn">Back to the lines</a></p></div>`;
+  CUR=L.id;
+  const lv=COURSE[L.level];
+  const whos=[...new Set(L.dialogue.map(d=>d.who))];
+  let n=0;const P=(id,t,h)=>part(++n,id,t,h);
+  return `<div class="stack" style="gap:32px">
+  <div class="lesson-head">${L.cls?'<span class="lb" style="--c:var(--rouge)">📌</span>':`<span class="lb" style="--c:${lv.c}">${lv.code}</span>`}<div><p class="eyebrow">${L.cls?`From class · ${lv.code} ${lv.en}`:`${lv.en} · Lesson ${L.num}`}</p><h1>${esc(L.title)}</h1><p class="muted">${esc(L.sub)}</p></div></div>
+  <div class="lesson-grid">
+    <nav class="toc" aria-label="Lesson sections">${PARTS.map(([id,t])=>`<a href="#${id}" data-jump="${id}">${t}</a>`).join("")}</nav>
+    <div class="stack" style="gap:44px">
+      ${P("obj","Learning objectives",`<p>By the end of this lesson you can:</p><ul class="clean">${L.objectives.map(o=>`<li>${esc(o)}</li>`).join("")}</ul>`)}
+      ${P("vocab","Vocabulary",`<p class="muted">Tap the speaker to hear each word.</p><div class="vocab">${L.vocab.map(v=>`<div class="vw">${sayBtn(v.say||v.fr,v.fr)}${v.pic?`<span class="vpic" aria-hidden="true">${v.pic}</span>`:""}<div><div class="fr">${esc(v.fr)}</div><div class="en">${esc(v.en)}</div></div></div>`).join("")}</div>`)}
+      ${P("grammar", L.grammarView?"Grammar: un, une, des and ne… plus":"Grammar: s'appeler, and tu or vous", L.grammarView?L.grammarView():lesson1Grammar(L))}
+      ${P("examples","Examples",`<div class="card" style="padding:6px 18px">${L.examples.map(x=>`<div class="ex">${sayBtn(x.fr)}<div><div style="font-weight:600">${esc(x.fr)}</div><div class="en">${esc(x.en)}</div></div></div>`).join("")}</div>`)}
+      ${P("pron","Pronunciation help",`<div class="grid g2">${L.pron.map(x=>`<div class="card" style="display:flex;flex-direction:column;gap:8px"><div class="row" style="justify-content:space-between"><h3>${x.h}</h3><div class="row" style="gap:6px">${sayBtn(x.say)}${slowBtn(x.say)}</div></div><p class="muted">${x.p}</p></div>`).join("")}</div>`)}
+      ${P("dialogue",esc(L.dialogueTitle||"Dialogue"),`<div class="row"><button class="btn small" id="playDialogue">▶ Play the whole dialogue</button></div>
+        <div class="dialogue">${L.dialogue.map(d=>`<div class="bubble ${d.r?"r":""}"><span class="who" style="background:${WHO_COLORS[whos.indexOf(d.who)%3]}">${d.who[0]}</span><div class="txt"><div class="eyebrow" style="font-size:.68rem">${d.who}</div><div class="fr">${esc(d.fr)}</div><div class="en">${esc(d.en)}</div></div>${sayBtn(d.fr)}</div>`).join("")}</div>`)}
+      ${P("listen","Listening activity",`<div data-mount="listen"></div>`)}
+      ${P("exercise","Interactive exercise",`<div data-mount="exercise"></div>`)}
+      ${P("game",hasPics(L)?"Game: Qu'est-ce que c'est ?":"Game: match the words",`<div data-mount="${hasPics(L)?"picture":"match"}"></div><p class="muted" style="font-size:.9rem">More games for this topic are in <a href="#games-${L.id}">🎮 Games</a>.</p>`)}
+      ${P("quizp","Quiz",`<div data-mount="quiz"></div>`)}
+      ${P("hw","Homework",homeworkList(L)+`<p class="muted" style="font-size:.9rem">Send your answers in <a href="#homework-${L.id}">📝 Homework</a>.</p>`)}
+      ${P("key","Answer key",answerKey(L))}
+      <div class="card row" style="justify-content:space-between">
+        <div><h3>${S.done[L.id]?"Lesson completed ✓":"Finished the lesson?"}</h3><p class="muted" style="font-size:.92rem">Mark it complete to add it to your progress.</p></div>
+        <button class="btn" id="markDone">${S.done[L.id]?"Completed":"Mark lesson complete"}</button>
+      </div>
+    </div>
+  </div></div>`;
+}
+const hasPics=L=>(L.vocab||[]).filter(v=>v.pic).length>=4;
+const hasArts=L=>(L.vocab||[]).some(v=>v.art);
+function homeworkList(L){return `<ol class="steps">${L.homework.map(h=>`<li><div><h3>${esc(h.h)}</h3><p class="muted" style="white-space:pre-line">${esc(h.p)}</p>${h.model?`<p class="note" style="margin-top:8px"><b>Model:</b> ${esc(h.model)}</p>`:""}</div></li>`).join("")}</ol>`}
+function answerKey(L){if(!L.key)return "";return `<details class="key"><summary>Show the answers</summary>
+  <p><b>Exercise:</b> ${L.key.exercise}</p>
+  <p style="margin-top:8px"><b>Listening:</b> ${L.listening.map((x,i)=>`${i+1}. ${esc(x.say)} = ${esc(x.o[0])}`).join(" · ")}</p>
+  <p style="margin-top:8px"><b>Homework:</b> ${L.key.translate}</p>
+  <p style="margin-top:8px" class="muted">Quiz answers are shown after each question.</p></details>`}
+
+function guestNote(){return ME?"":`<p class="note">You're not logged in, so this won't be saved for your teacher. <a href="#login">Log in</a> or <a href="#register">create an account</a>.</p>`}
+function pageHead(eyebrow,title,text,route){
+  return `<div><p class="eyebrow">${eyebrow}</p><h1>${title}</h1>${text?`<p class="muted" style="margin-top:10px;max-width:62ch">${text}</p>`:""}</div>${guestNote()}${topicBar(route)}`;
+}
+function games(arg){
+  pickTopic(arg,"games");const L=CL();
+  const list=[];
+  if(hasPics(L))list.push(["picture","Qu'est-ce que c'est ?"]);
+  if(hasArts(L))list.push(["genre","Un, une ou des ?"]);
+  list.push(["match","French → English"],["match-en","English → French"],["memory","Memory cards"]);
+  if(L.scramble&&L.scramble.length)list.push(["scramble","Word scramble"]);
+  return `<div class="stack">
+    ${pageHead("🎮 Games","Jouons !",`Every game uses the words from <b>${esc(topicLabel(L))}</b>. Choose another topic below.`,"games")}
+    <div class="game-tabs" role="group" aria-label="Choose a game">${list.map(([k,t],i)=>`<button data-game="${k}" aria-pressed="${i===0}">${t}</button>`).join("")}</div>
+    <div id="gameBox" data-mount="${list[0][0]}"></div>
+  </div>`;
+}
+function quiz(arg){pickTopic(arg,"quiz");const L=CL();return `<div class="stack">${pageHead("🧠 Quizzes",`Quiz: ${esc(L.title)}`,`${L.quiz.length} questions. You see your score at the end.`,"quiz")}<div data-mount="quiz"></div></div>`}
+function listening(arg){pickTopic(arg,"listening");return `<div class="stack">${pageHead("🎧 Listening","Écoutez bien","Press play, then choose what you heard. Use Slow if you need it.","listening")}<div data-mount="listen"></div>${hasArts(CL())?`<div><h2 style="margin-bottom:12px">Un ou une ?</h2><div data-mount="unune"></div></div>`:""}</div>`}
+function speaking(arg){pickTopic(arg,"speaking");return `<div class="stack">${pageHead("🗣️ Speaking practice","À vous de parler","Listen to each phrase, say it out loud three times, then tick it. For extra practice, record yourself on your phone and compare.","speaking")}<div class="activity" data-mount="speak"></div></div>`}
+function homework(arg){
+  pickTopic(arg,"homework");const L=CL();
+  return `<div class="stack">${pageHead("📝 Homework","Les devoirs","Do the tasks, then write your answers below and press Send. Your teacher will reply here.","homework")}
+    <div class="card">${L.due?`<p class="eyebrow" style="margin-bottom:10px">Due ${esc(fmtDate(L.due))}</p>`:""}${homeworkList(L)}</div>
+    ${answerKey(L)}
+    <div class="activity">
+      <h3>My answers</h3>
+      ${isStudent()?`<textarea id="hw-answer" rows="6" placeholder="Écris tes réponses ici…"></textarea>
+        <div class="row"><button class="btn" id="hwSend">Send to my teacher</button></div>
+        <div data-mount="hwsubs"></div>`
+      :isTeacher()?`<p class="muted">Students write their answers here. You'll find them in the Teacher Area under Homework.</p>`
+      :`<p class="muted"><a href="#login">Log in</a> to send your answers to your teacher.</p>`}
+    </div></div>`;
+}
+
+function progress(){
+  if(!ME)return `<div class="stack"><div><p class="eyebrow">🏆 Progress</p><h1>Your progress</h1></div>
+    <div class="card row" style="justify-content:space-between"><div><h3>Log in to see your progress</h3><p class="muted" style="font-size:.92rem">When you're logged in, every quiz, game and lesson is saved here automatically.</p></div><div class="row"><a class="btn" href="#login">Log in</a><a class="btn ghost" href="#register">Create an account</a></div></div>
+    ${voiceCard()}</div>`;
+  const lessonsDone=Object.keys(S.done).length, won=BADGES.filter(b=>S.badges[b.id]).length;
+  const best=Object.values(S.quizBest);const avg=best.length?Math.round(best.reduce((a,b)=>a+b,0)/best.length)+"%":"–";
+  const goals=ACTS.filter(a=>a.kind==="goal");
+  const qTopics=topicsFor("quiz");
+  return `<div class="stack">
+    <div><p class="eyebrow">🏆 Progress${ME.cls?" · "+esc(ME.cls):""}</p><h1>${isTeacher()?"Your progress":`Bravo, ${esc(ME.name.split(" ")[0])} !`}</h1><p class="muted" style="margin-top:10px">Everything you finish is saved here automatically.</p></div>
+    <dl class="stats">
+      <div><dt>Lessons completed</dt><dd>${lessonsDone}</dd></div>
+      <div><dt>Quizzes taken</dt><dd>${S.counts.quiz||0}</dd></div>
+      <div><dt>Average best score</dt><dd>${avg}</dd></div>
+      <div><dt>Badges</dt><dd>${won} / ${BADGES.length}</dd></div>
+    </dl>
+    ${goals.length?`<div><h2 style="margin-bottom:14px">Class goals</h2><div class="stack" style="gap:10px">${goals.map(g=>`<div class="card row" style="justify-content:space-between"><div><h3>🎯 ${esc(g.title)}</h3>${g.text?`<p class="muted" style="font-size:.92rem;white-space:pre-line">${esc(g.text)}</p>`:""}</div>${S.goals[g.id]?'<span class="chip ok">Done ✓</span>':isStudent()?`<button class="btn small" data-goal="${g.id}">I did it</button>`:""}</div>`).join("")}</div></div>`:""}
+    <div class="tablewrap"><table><thead><tr><th>Topic</th><th>Completed</th><th>Best quiz</th></tr></thead><tbody>
+      ${[...new Set([...qTopics,...CLASS_TOPICS,"a1-1"])].map(id=>{const L=LESSONS[id];return `<tr><td>${topicIcon(L)} ${esc(topicLabel(L))}</td><td>${L.custom?"–":S.done[id]?'<span class="chip ok">Yes</span>':'<span class="chip">Not yet</span>'}</td><td style="font-variant-numeric:tabular-nums">${S.quizBest[id]!=null?S.quizBest[id]+"%":"–"}</td></tr>`}).join("")}
+    </tbody></table></div>
+    <div><h2 style="margin-bottom:14px">Achievements</h2><div class="badges">${BADGES.map(b=>`<div class="badge ${S.badges[b.id]?"won":"locked"}"><span class="medal">${b.icon}</span><div><b>${b.name}</b><span>${b.d}</span></div></div>`).join("")}</div></div>
+    ${voiceCard()}
+  </div>`;
+}
+function voiceCard(){return `<div class="card row" style="justify-content:space-between"><div><h3>🔊 Voice</h3><p class="muted" style="font-size:.9rem">Choose the French voice you like best. The list depends on your phone or computer.</p></div>
+  <div class="row"><select id="voice-pick" aria-label="French voice"></select><button class="btn ghost" type="button" id="voiceTest">Test</button></div></div>`}
+function fillVoicePick(sel){
+  const opts=[...frVoices].sort((a,b)=>voiceScore(b)-voiceScore(a));
+  sel.innerHTML=`<option value="">Automatic (soft female voice)</option>`+opts.map(v=>`<option value="${esc(v.voiceURI)}" ${v.voiceURI===PREF.voice?"selected":""}>${esc(v.name)} (${esc(v.lang)})</option>`).join("");
+}
+
+/* ---------- accounts ---------- */
+function demoNote(){return API.live?"":`<p class="note"><b>Demo mode.</b> Accounts are saved in this browser only, so you can try everything here.</p>`}
+function classField(id){
+  const cl=SETTINGS.classes||[];
+  return cl.length?`<select id="${id}" required><option value="">Choose your class</option>${cl.map(c=>`<option>${esc(c)}</option>`).join("")}</select>`
+                  :`<input type="text" id="${id}" placeholder="e.g. Grade 7A" required>`;
+}
+function authShell(form){
+  return `<div class="welcome">
+    <div class="welcome-intro">
+      <p class="eyebrow">Bienvenue !</p>
+      <h1>Learn French.<br>Play. Practice.<br><em class="accent">Progress.</em></h1>
+      <p class="lead">Free lessons, games, quizzes and listening practice from your teacher, Rana. Log in to start.</p>
+      <ul class="welcome-list">
+        <li><span>📚</span>Lessons with audio for every word</li>
+        <li><span>🎮</span>Games and quizzes with instant scores</li>
+        <li><span>🏆</span>Badges and progress saved to your account</li>
+      </ul>
+    </div>
+    <div class="auth">${demoNote()}${form}</div>
+  </div>`;
+}
+function login(){
+  if(ME)return `<div class="stack"><h1>You're logged in</h1><p><a class="btn" href="${isTeacher()?"#teacher":"#dashboard"}">Go to my dashboard</a></p></div>`;
+  return authShell(`
+    <form class="card auth-card" id="loginForm" autocomplete="on">
+      <p class="eyebrow">Student</p><h1>Log in</h1>
+      <label for="li-user">Username</label><input type="text" id="li-user" autocomplete="username" autocapitalize="off" spellcheck="false" required>
+      <label for="li-pass">Password</label><input type="password" id="li-pass" autocomplete="current-password" required>
+      <p class="form-err" aria-live="polite"></p>
+      <button class="btn">Log in</button>
+      <p class="muted" style="font-size:.92rem">New here? <a href="#register">Create an account</a></p>
+      <p class="muted" style="font-size:.85rem">Forgot your password? Ask your teacher to reset your account.</p>
+    </form>`);
+}
+function register(){
+  if(ME)return login();
+  return authShell(`
+    <form class="card auth-card" id="regForm" autocomplete="on">
+      <p class="eyebrow">Student</p><h1>Create your account</h1>
+      <label for="rg-name">Your full name</label><input type="text" id="rg-name" autocomplete="name" required>
+      <label for="rg-user">Choose a username</label><input type="text" id="rg-user" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="e.g. sara.k" required>
+      <p class="hint">3–20 characters: letters, numbers, dots or dashes. You'll use it to log in.</p>
+      <label for="rg-pass">Password</label><input type="password" id="rg-pass" autocomplete="new-password" required>
+      <p class="hint">At least 6 characters.</p>
+      <label for="rg-pass2">Password again</label><input type="password" id="rg-pass2" autocomplete="new-password" required>
+      <p class="form-err" aria-live="polite"></p>
+      <button class="btn">Create my account</button>
+      <p class="muted" style="font-size:.92rem">Already have an account? <a href="#login">Log in</a></p>
+    </form>`);
+}
+
+function dashboard(){
+  if(!isStudent())return login();
+  const won=BADGES.filter(b=>S.badges[b.id]);
+  const best=Object.values(S.quizBest);const avg=best.length?Math.round(best.reduce((a,b)=>a+b,0)/best.length)+"%":"–";
+  const hw=ACTS.filter(a=>a.kind==="homework").sort((a,b)=>b.createdAt-a.createdAt);
+  return `<div class="stack" style="gap:36px">
+    <div class="row" style="justify-content:space-between;align-items:flex-end">
+      <div><p class="eyebrow">Mon tableau de bord${ME.cls?" · "+esc(ME.cls):""}</p><h1>Bonjour, <em class="accent">${esc(ME.name.split(" ")[0])}</em> !</h1></div>
+      <a class="btn ghost" href="#progress">All my progress</a>
+    </div>
+    <dl class="stats">
+      <div><dt>Lessons completed</dt><dd>${Object.keys(S.done).length}</dd></div>
+      <div><dt>Quizzes taken</dt><dd>${S.counts.quiz||0}</dd></div>
+      <div><dt>Average best score</dt><dd>${avg}</dd></div>
+      <div><dt>Games finished</dt><dd>${S.games}</dd></div>
+    </dl>
+    <section class="stack" style="gap:14px"><h2>New from your teacher</h2>${newFromTeacher(6)}</section>
+    ${hw.length?`<section class="stack" style="gap:14px"><h2>Homework</h2><div class="stack" style="gap:10px">${hw.slice(0,4).map(a=>`<a class="card row hw-row" href="#homework-act-${a.id}" style="justify-content:space-between;text-decoration:none;color:inherit"><div><h3>📝 ${esc(a.title)}</h3><p class="muted" style="font-size:.9rem">${a.due?"Due "+esc(fmtDate(a.due)):"No due date"}</p></div><span class="chip" data-hwstatus="act-${a.id}">Open</span></a>`).join("")}</div></section>`:""}
+    <section class="stack" style="gap:14px"><h2>Keep going</h2>${classStrip()}</section>
+    <section class="stack" style="gap:14px"><h2>My recent activity</h2><div data-mount="mylog"><p class="muted">Loading…</p></div></section>
+    <section class="stack" style="gap:14px"><h2>My badges</h2>${won.length?`<div class="badges">${won.map(b=>`<div class="badge won"><span class="medal">${b.icon}</span><div><b>${b.name}</b><span>${b.d}</span></div></div>`).join("")}</div>`:`<p class="muted">No badges yet. Finish a quiz or a game to earn your first one.</p>`}</section>
+  </div>`;
+}
+
+/* ---------- teacher ---------- */
+const TTABS=[["teacher","Overview"],["teacher-students","Students"],["teacher-activities","Add activities"],["teacher-homework","Homework"],["setup","Setup guide"]];
+let tClass="";
+function teacherTabs(cur){return `<nav class="game-tabs" aria-label="Teacher sections">${TTABS.map(([h,t])=>`<a class="ttab" href="#${h}" aria-current="${h===cur?"page":"false"}">${t}</a>`).join("")}</nav>`}
+function teacherLogin(){
+  return `<div class="stack">
+    <div><p class="eyebrow">👩‍🏫 Teacher Area</p><h1>Teacher login</h1></div>${demoNote()}
+    <div class="auth" style="margin:0">
+      <form class="card auth-card" id="tLoginForm">
+        <h2>Log in</h2>
+        <p class="muted" style="font-size:.9rem">${API.live?"For the teacher accounts only.":"Demo mode: the first login with a teacher email sets its password in this browser."}</p>
+        <label for="tl-email">Email</label><input type="email" id="tl-email" autocomplete="email" required>
+        <label for="tl-pass">Password</label><input type="password" id="tl-pass" autocomplete="current-password" required>
+        <p class="form-err" aria-live="polite"></p>
+        <button class="btn">Log in</button>
+      </form>
+    </div>
+  </div>`;
+}
+function tShell(tab,inner){
+  return `<div class="stack">
+    <div class="row" style="justify-content:space-between;align-items:flex-end"><div><p class="eyebrow">👩‍🏫 Teacher Area</p><h1>Bonjour, ${esc(ME.name.split(" ")[0])} !</h1></div></div>
+    ${demoNote()}${teacherTabs(tab)}${inner}</div>`;
+}
+function teacher(arg){
+  if(isStudent())return home();
+  if(!isTeacher())return teacherLogin();
+  if(!arg)return tShell("teacher",`<div data-mount="tOverview"><p class="muted">Loading your classes…</p></div>`);
+  if(arg==="students")return tShell("teacher-students",`<div data-mount="tStudents"><p class="muted">Loading…</p></div>`);
+  if(arg==="homework")return tShell("teacher-homework",`<div data-mount="tHomework"><p class="muted">Loading…</p></div>`);
+  if(arg==="settings")return tShell("teacher-settings",`<form class="card stack" id="classesForm" style="gap:12px;max-width:560px"><h2>Your classes</h2><p class="muted">One class per line. Students choose their class when they create an account.</p><textarea id="t-classes" rows="6">${esc((SETTINGS.classes||[]).join("\n"))}</textarea><div><button class="btn">Save classes</button></div></form>`);
+  if(arg==="activities")return tShell("teacher-activities",activityEditor()+`<div data-mount="tActList"></div>`);
+  return tShell("teacher","");
+}
+function pupil(uid){
+  if(!isTeacher())return teacher();
+  return tShell("teacher-students",`<div data-mount="tPupil" data-uid="${esc(uid)}"><p class="muted">Loading…</p></div>`);
+}
+
+/* Activity editor */
+let EDIT_KIND="words";
+const KIND_HELP={
+  words:"Type one word or phrase per line: French = English. The site makes matching, memory, scramble, a quiz, listening and speaking practice from your list.",
+  quiz:"Write each question with the correct answer and up to three wrong answers. Students see the answers in a random order.",
+  listening:"Students hear the French and choose the meaning. Give the correct meaning and two wrong ones.",
+  speaking:"Type one French phrase per line. Students listen, repeat and tick each one.",
+  homework:"Write the instructions. Students send their answers on the Homework page and you read them in the Homework tab.",
+  goal:"A goal appears on every student's Progress page. They tick it when they've done it, and you see who did."
+};
+function rowsFor(kind,n){return Array.from({length:n},()=>kind==="quiz"?quizRow():listenRow()).join("")}
+const quizRow=()=>`<div class="qrow"><input type="text" placeholder="Question, e.g. How do you say “a book”?" data-f="q"><input type="text" placeholder="Correct answer" data-f="a" class="ok-in"><input type="text" placeholder="Wrong answer" data-f="w1"><input type="text" placeholder="Wrong answer" data-f="w2"><input type="text" placeholder="Wrong answer (optional)" data-f="w3"></div>`;
+const listenRow=()=>`<div class="qrow"><input type="text" placeholder="French to hear, e.g. C'est un stylo." data-f="fr"><input type="text" placeholder="Correct meaning" data-f="a" class="ok-in"><input type="text" placeholder="Wrong meaning" data-f="w1"><input type="text" placeholder="Wrong meaning" data-f="w2"></div>`;
+function kindFields(k){
+  if(k==="words")return `<label for="a-words">Words</label><textarea id="a-words" rows="8" placeholder="un chien = a dog&#10;un chat = a cat&#10;une souris = a mouse&#10;un oiseau = a bird"></textarea>`;
+  if(k==="quiz"||k==="listening")return `<label>${k==="quiz"?"Questions":"Items"}</label><div id="a-rows" class="stack" style="gap:10px">${rowsFor(k,3)}</div><div><button type="button" class="btn ghost small" id="a-addrow">+ Add ${k==="quiz"?"question":"item"}</button></div>`;
+  if(k==="speaking")return `<label for="a-phrases">Phrases</label><textarea id="a-phrases" rows="6" placeholder="Qu'est-ce que c'est ?&#10;C'est un stylo.&#10;Ce sont des clés."></textarea>`;
+  if(k==="homework")return `<label for="a-text">Instructions</label><textarea id="a-text" rows="6" placeholder="Write 5 sentences about the objects in your bag. Use un, une and des."></textarea><label for="a-due">Due date (optional)</label><input type="date" id="a-due">`;
+  if(k==="goal")return `<label for="a-text">Description (optional)</label><textarea id="a-text" rows="3" placeholder="Finish two quizzes and one game before Sunday."></textarea>`;
+  return "";
+}
+function activityEditor(){
+  return `<form class="card stack" id="actForm" style="gap:12px">
+    <h2>Add an activity</h2>
+    <label>Where should it appear?</label>
+    <div class="game-tabs" role="group" aria-label="Section">${Object.entries(KIND_LABEL).map(([k,t])=>`<button type="button" data-kind="${k}" aria-pressed="${k===EDIT_KIND}">${t}</button>`).join("")}</div>
+    <p class="note" id="a-help">${KIND_HELP[EDIT_KIND]}</p>
+    <div class="stack" style="gap:6px"><label for="a-title">Title</label><input type="text" id="a-title" placeholder="e.g. Les animaux" required></div>
+    <div id="a-fields" class="stack" style="gap:8px">${kindFields(EDIT_KIND)}</div>
+    <p class="form-err" aria-live="polite"></p>
+    <div><button class="btn">Publish to students</button></div>
+  </form>`;
+}
+function readActivity(){
+  const f=$("#actForm"), title=$("#a-title").value.trim(), cls="", k=EDIT_KIND;
+  if(!title)throw new Error("Give the activity a title.");
+  const a={kind:k,title,cls};
+  const val=id=>($(id)?.value||"").trim();
+  if(k==="words"){
+    a.words=val("#a-words").split(/\n+/).map(l=>l.split(/\s*[=|:]\s*|\s+[-–]\s+/)).filter(p=>p.length>=2&&p[0].trim()&&p[1].trim()).map(p=>({fr:p[0].trim(),en:p.slice(1).join(" ").trim()}));
+    if(a.words.length<4)throw new Error("Add at least 4 words, one per line, like: un chien = a dog");
+  }
+  if(k==="quiz"){
+    a.questions=$$(".qrow",f).map(r=>{const g=x=>$(`[data-f=${x}]`,r).value.trim();return {q:g("q"),a:g("a"),w:[g("w1"),g("w2"),g("w3")].filter(Boolean)}}).filter(q=>q.q&&q.a);
+    if(!a.questions.length)throw new Error("Write at least one question with its correct answer.");
+    if(a.questions.some(q=>!q.w.length))throw new Error("Each question needs at least one wrong answer.");
+  }
+  if(k==="listening"){
+    a.items=$$(".qrow",f).map(r=>{const g=x=>$(`[data-f=${x}]`,r).value.trim();return {fr:g("fr"),en:g("a"),w:[g("w1"),g("w2")].filter(Boolean)}}).filter(i=>i.fr&&i.en);
+    if(!a.items.length)throw new Error("Write at least one French phrase with its meaning.");
+    if(a.items.some(i=>!i.w.length))throw new Error("Each item needs at least one wrong meaning.");
+  }
+  if(k==="speaking"){a.phrases=val("#a-phrases").split(/\n+/).map(s=>s.trim()).filter(Boolean);if(!a.phrases.length)throw new Error("Type at least one phrase.")}
+  if(k==="homework"){a.text=val("#a-text");a.due=val("#a-due");if(!a.text)throw new Error("Write the homework instructions.")}
+  if(k==="goal"){a.text=val("#a-text")}
+  return a;
+}
+
+/* Setup guide */
+function rulesText(){
+  const ems=(TEACHER_EMAILS.length?TEACHER_EMAILS:["YOUR-EMAIL@gmail.com"]).map(e=>`'${e.toLowerCase()}'`).join(", ");
+  return `rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isTeacher() { return signedIn() && request.auth.token.email.lower() in [${ems}]; }
+    function isMe(uid) { return signedIn() && request.auth.uid == uid; }
+
+    match /users/{uid} {
+      allow read: if isMe(uid) || isTeacher();
+      allow create, update: if isMe(uid);
+      allow delete: if isTeacher();
+    }
+    match /progress/{uid} {
+      allow read: if isMe(uid) || isTeacher();
+      allow write: if isMe(uid);
+    }
+    match /log/{id} {
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow read: if isTeacher() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow delete: if isTeacher();
+    }
+    match /submissions/{id} {
+      allow create: if signedIn() && request.resource.data.uid == request.auth.uid;
+      allow read: if isTeacher() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow update, delete: if isTeacher();
+    }
+    match /activities/{id} {
+      allow read: if signedIn();
+      allow write: if isTeacher();
+    }
+    match /settings/{id} {
+      allow read: if true;
+      allow write: if isTeacher();
+    }
+  }
+}`;
+}
+function setup(){
+  if(!isTeacher())return teacher();
+  return `<div class="stack" style="gap:36px">
+    <div><p class="eyebrow">👩‍🏫 Teacher Area</p><h1>Setup guide</h1><p class="muted" style="margin-top:10px;max-width:62ch">Do this once. It connects the website to a free Firebase database from Google, so students can log in from any phone and you can see their progress. It takes about 20 minutes, and you don't need a credit card.</p></div>
+    ${isTeacher()?teacherTabs("setup"):""}
+    <p class="note">Status: ${API.live?"<b>Connected to Firebase.</b> Accounts and progress are saved online.":"<b>Demo mode.</b> Nothing is connected yet, so accounts are saved in this browser only."}</p>
+
+    <section class="stack" style="gap:14px"><h2>Part 1 · Create your free Firebase project</h2>
+      <div class="card"><ol class="steps">
+        <li><div>Go to <a href="https://console.firebase.google.com" target="_blank" rel="noopener">console.firebase.google.com</a> and sign in with your Google account.</div></li>
+        <li><div>Click <b>Create a project</b>. Name it <code>french-with-rana</code>. You can turn Google Analytics off. Click <b>Create project</b>.</div></li>
+        <li><div>In the left menu open <b>Build → Authentication</b> → <b>Get started</b>. Choose <b>Email/Password</b>, switch on the first option, and click <b>Save</b>.</div></li>
+        <li><div>Still in Authentication, open the <b>Users</b> tab → <b>Add user</b>. Add each teacher email with its password. Only these emails can open the Teacher Area: ${TEACHER_EMAILS.map(e=>`<code>${esc(e)}</code>`).join(" and ")}.</div></li>
+        <li><div>Open <b>Build → Firestore Database</b> → <b>Create database</b>. Pick a location near you (for Qatar, <b>europe-west</b> or <b>me-central2</b>) and choose <b>Start in production mode</b>.</div></li>
+        <li><div>In Firestore, open the <b>Rules</b> tab. Delete everything, paste the rules below, and click <b>Publish</b>. ${TEACHER_EMAILS.length?"":"Replace <code>YOUR-EMAIL@gmail.com</code> with your own email first."}</div></li>
+      </ol>
+      <div class="codebox"><pre id="rulesPre">${esc(rulesText())}</pre><button class="btn small" type="button" id="copyRules">Copy rules</button></div></div>
+    </section>
+
+    <section class="stack" style="gap:14px"><h2>Part 2 · Connect the website</h2>
+      <div class="card"><ol class="steps">
+        <li><div>In Firebase, click the ⚙️ gear next to <b>Project Overview</b> → <b>Project settings</b>. Scroll to <b>Your apps</b> and click the <b>&lt;/&gt;</b> (Web) icon. Name it <code>website</code> and click <b>Register app</b>.</div></li>
+        <li><div>Firebase shows a block of code with <code>const firebaseConfig = { apiKey: … }</code>. Copy just the part between the curly brackets.</div></li>
+        <li><div>Open your <code>index.html</code> (on GitHub: open the file, then click the ✏️ pencil). Near the top of the script, find <code>const FIREBASE_CONFIG = {</code> and paste your config inside the brackets.</div></li>
+        <li><div>Save (on GitHub: <b>Commit changes</b>). The easy way: send the config to Claude and ask for the finished file.</div></li>
+      </ol></div>
+    </section>
+
+    <section class="stack" style="gap:14px"><h2>Part 3 · Put it online with GitHub Pages</h2>
+      <div class="card"><ol class="steps">
+        <li><div>Create a free account at <a href="https://github.com/signup" target="_blank" rel="noopener">github.com/signup</a>.</div></li>
+        <li><div>Click <b>+</b> → <b>New repository</b>, name it <code>french-with-rana</code>, choose <b>Public</b>, click <b>Create repository</b>.</div></li>
+        <li><div>Click <b>uploading an existing file</b>, drag in <code>index.html</code>, click <b>Commit changes</b>.</div></li>
+        <li><div>Open <b>Settings → Pages</b>. Under “Branch” choose <b>main</b> and <b>/ (root)</b>, then <b>Save</b>. After 1–2 minutes your link appears at the top.</div></li>
+      </ol></div>
+    </section>
+
+    <section class="stack" style="gap:14px"><h2>Part 4 · First day with your class</h2>
+      <div class="grid g2">
+        <div class="card prose"><h3>1. Teacher login</h3><p class="muted">The Teacher Area is hidden from students. Open <code>your-site-link/#teacher</code> and log in with a teacher email and the password you set in Firebase.</p></div>
+        <div class="card prose"><h3>2. Students register</h3><p class="muted">Give students the link. They press <b>Create my account</b>, choose a username and a password. No email needed.</p></div>
+        <div class="card prose"><h3>Forgotten passwords</h3><p class="muted">In Firebase → Authentication → Users, find <code>username@${STUDENT_DOMAIN}</code> and delete it. The student can then register again with the same username. Their old scores stay in your dashboard.</p></div>
+        <div class="card prose"><h3>Is it really free?</h3><p class="muted">Yes. Firebase's free plan (Spark) allows 50,000 reads and 20,000 writes a day, which is far more than a class uses. GitHub Pages is free too.</p></div>
+      </div>
+    </section>
+  </div>`;
+}
+
+/* ---------- interactive components ---------- */
+const MOUNT={};
+
+MOUNT.quiz=el=>{
+  const L=CL(), qs=L.quiz; let i=0,score=0;
+  el.className="activity";
+  const draw=()=>{
+    if(i>=qs.length){
+      const pct=Math.round(score/qs.length*100);
+      S.quizBest[L.id]=Math.max(S.quizBest[L.id]||0,pct);save();award("debut");if(pct===100)award("sansfaute");record({type:"quiz",topic:L.id,title:L.title,score,total:qs.length,pct});
+      const msg=pct===100?"Parfait ! A perfect score.":pct>=80?"Très bien ! Nearly perfect.":pct>=50?"Pas mal ! Review the vocabulary and try again.":"Courage ! Go back to the lesson, then try again.";
+      el.innerHTML=`<div class="result"><p class="eyebrow">Quiz result</p><p class="big">${score} / ${qs.length}</p><p style="font-weight:600">${msg}</p>
+        <dl class="stats"><div><dt>Student</dt><dd>${esc(ME?ME.name:"Guest")}</dd></div><div><dt>Correct</dt><dd>${score}</dd></div><div><dt>Percentage</dt><dd>${pct}%</dd></div><div><dt>Best score</dt><dd>${S.quizBest[L.id]}%</dd></div></dl>
+        <div class="row"><button class="btn" data-act="again">Try again</button><a class="btn ghost" href="#progress">See my badges</a></div></div>`;
+      $("[data-act=again]",el).onclick=()=>{i=0;score=0;draw()};return;
+    }
+    const q=qs[i], opts=shuffle(q.o.map((t,k)=>({t,ok:k===0})));
+    el.innerHTML=`<div class="qhead"><span>Question ${i+1} of ${qs.length}</span><span>Score: ${score}</span></div>
+      <div class="pbar"><i style="width:${i/qs.length*100}%"></i></div>
+      <p class="qtext">${esc(q.q)}</p>
+      <div class="opts">${opts.map((o,k)=>`<button class="opt" data-k="${k}">${esc(o.t)}</button>`).join("")}</div>
+      <p class="feedback" aria-live="polite"></p>
+      <div><button class="btn" data-act="next" hidden>${i===qs.length-1?"See my score":"Next question"}</button></div>`;
+    const fb=$(".feedback",el), next=$("[data-act=next]",el);
+    $$(".opt",el).forEach(b=>b.onclick=()=>{
+      const o=opts[+b.dataset.k];
+      $$(".opt",el).forEach((x,k)=>{x.disabled=true;if(opts[k].ok)x.classList.add("right")});
+      if(o.ok){score++;fb.className="feedback good";fb.textContent="Correct ! "+(q.e||"")}
+      else{b.classList.add("wrong");fb.className="feedback bad";fb.textContent="Not quite. "+(q.e||"")}
+      next.hidden=false;next.focus();
+    });
+    next.onclick=()=>{i++;draw()};
+  };
+  draw();
+};
+
+MOUNT.listen=el=>{
+  const items=CL().listening; let answered=0,right=0;
+  el.className="activity";
+  el.innerHTML=`<p class="muted">Press play, listen, and choose the meaning.</p>${items.map((it,n)=>{
+    const opts=shuffle(it.o.map((t,k)=>({t,ok:k===0})));
+    return `<div class="li-item" data-n="${n}"><span class="row" style="gap:6px"><b style="width:1.4em">${n+1}.</b>${sayBtn(it.say,"item "+(n+1))}${slowBtn(it.say)}</span>
+      <div class="opts">${opts.map(o=>`<button class="opt" data-ok="${o.ok?1:0}">${esc(o.t)}</button>`).join("")}</div></div>`}).join("")}
+    <p class="feedback" id="listenScore" aria-live="polite"></p>`;
+  $$(".li-item",el).forEach(row=>{
+    $$(".opt",row).forEach(b=>b.onclick=()=>{
+      $$(".opt",row).forEach(x=>{x.disabled=true;if(x.dataset.ok==="1")x.classList.add("right")});
+      answered++;if(b.dataset.ok==="1")right++;else b.classList.add("wrong");
+      if(answered===items.length){const s=$("#listenScore",el);s.className="feedback "+(right===items.length?"good":"");s.textContent=`You got ${right} out of ${items.length}.`+(right===items.length?" Excellent listening !":" Listen again and try once more.");if(right===items.length)award("oreille");record({type:"listening",topic:CUR,title:CL().title,score:right,total:items.length,pct:Math.round(right/items.length*100)})}
+    });
+  });
+};
+
+MOUNT.exercise=el=>{
+  const items=CL().exercise;
+  el.className="activity";
+  el.innerHTML=`<p class="muted">Type the missing word. Accents are optional.</p>
+    ${items.map((it,n)=>`<div class="fill"><b style="width:1.4em">${n+1}.</b><span>${esc(it.a)}</span><input type="text" id="ex-${n}" aria-label="Answer ${n+1}" autocomplete="off" autocapitalize="off" spellcheck="false"><span>${esc(it.b)}</span><span class="muted" style="font-size:.82rem">(${esc(it.hint)})</span><span class="fix"></span></div>`).join("")}
+    <div class="row"><button class="btn" id="exCheck">Check my answers</button><button class="btn ghost" id="exReset">Clear</button></div><p class="feedback" aria-live="polite"></p>`;
+  $("#exCheck",el).onclick=()=>{
+    let ok=0;
+    items.forEach((it,n)=>{const inp=$("#ex-"+n,el),fix=inp.parentElement.querySelector(".fix");const good=it.ans.some(a=>norm(a)===norm(inp.value));
+      inp.classList.toggle("good",good);inp.classList.toggle("bad",!good);fix.textContent=good?"":`→ ${it.ans[0]}`;if(good)ok++});
+    const fb=$(".feedback",el);fb.className="feedback "+(ok===items.length?"good":"bad");fb.textContent=`${ok} / ${items.length} correct.`+(ok===items.length?" Parfait !":" Check the red answers.");
+    if(ok===items.length)award("plume");
+    record({type:"exercise",topic:CUR,title:CL().title,score:ok,total:items.length,pct:Math.round(ok/items.length*100)});
+  };
+  $("#exReset",el).onclick=()=>{$$("input",el).forEach(i=>{i.value="";i.className=""});$$(".fix",el).forEach(f=>f.textContent="");$(".feedback",el).textContent=""};
+};
+
+function gameWon(name,score,total){S.games++;save();award("joueur");record({type:"game",game:name,topic:CUR,title:CL().title,...(total?{score,total,pct:Math.round(score/total*100)}:{})})}
+
+function matchGame(el,enFirst){
+  el.className="activity";
+  const start=()=>{
+    const pairs=shuffle(CL().vocab).slice(0,6).map((v,i)=>({...v,i}));
+    const A=shuffle(pairs),B=shuffle(pairs);let sel=null,left=pairs.length,tries=0;
+    const lab=(p,side)=>side==="fr"?p.fr:p.en;
+    const s1=enFirst?"en":"fr",s2=enFirst?"fr":"en";
+    el.innerHTML=`<div class="qhead"><span>Tap a word on the left, then its partner on the right.</span><span id="mTries">Tries: 0</span></div>
+      <div class="match"><div class="col">${A.map(p=>`<button class="gtile" data-side="${s1}" data-i="${p.i}">${esc(lab(p,s1))}</button>`).join("")}</div>
+      <div class="col">${B.map(p=>`<button class="gtile" data-side="${s2}" data-i="${p.i}">${esc(lab(p,s2))}</button>`).join("")}</div></div><div class="mwin"></div>`;
+    $$(".gtile",el).forEach(b=>b.onclick=()=>{
+      if(b.classList.contains("done"))return;
+      if(b.dataset.side==="fr"){const p=pairs.find(x=>x.i==b.dataset.i);speak(p.say||p.fr)}
+      if(!sel||sel.dataset.side===b.dataset.side){if(sel)sel.classList.remove("sel");sel=b;b.classList.add("sel");return}
+      tries++;$("#mTries",el).textContent="Tries: "+tries;
+      if(sel.dataset.i===b.dataset.i){[sel,b].forEach(x=>{x.classList.remove("sel");x.classList.add("done");x.disabled=true});left--;
+        if(left===0){$(".mwin",el).innerHTML=`<div class="result"><p class="big" style="font-size:2.6rem">Bravo !</p><p>All ${pairs.length} pairs in ${tries} tries.</p><button class="btn">Play again</button></div>`;$(".mwin button",el).onclick=start;gameWon(enFirst?"English → French":"French → English")}}
+      else{const a=sel;[a,b].forEach(x=>{x.classList.remove("sel");x.classList.add("no")});setTimeout(()=>[a,b].forEach(x=>x.classList.remove("no")),450)}
+      sel=null;
+    });
+  };
+  start();
+}
+MOUNT.match=el=>matchGame(el,false);
+MOUNT["match-en"]=el=>matchGame(el,true);
+
+MOUNT.memory=el=>{
+  el.className="activity";
+  const start=()=>{
+    const pairs=shuffle(CL().vocab.filter(v=>v.fr.length<16)).slice(0,6);
+    const cards=shuffle(pairs.flatMap((p,i)=>[{i,t:p.fr,say:p.say||p.fr,lang:"fr"},{i,t:p.en,lang:"en"}]));
+    let up=[],moves=0,found=0,lock=false;
+    el.innerHTML=`<div class="qhead"><span>Find each French word and its English meaning.</span><span id="mm">Moves: 0</span></div>
+      <div class="memory">${cards.map((c,k)=>`<button class="mcard ${c.lang}" data-k="${k}" aria-label="Hidden card">${esc(c.t)}</button>`).join("")}</div><div class="mwin"></div>`;
+    $$(".mcard",el).forEach(b=>b.onclick=()=>{
+      const c=cards[+b.dataset.k];
+      if(lock||b.classList.contains("up")||b.classList.contains("done"))return;
+      b.classList.add("up");b.setAttribute("aria-label",c.t);if(c.lang==="fr")speak(c.say);up.push(b);
+      if(up.length===2){moves++;$("#mm",el).textContent="Moves: "+moves;
+        const [x,y]=up;
+        if(cards[+x.dataset.k].i===cards[+y.dataset.k].i){x.classList.add("done");y.classList.add("done");up=[];found++;
+          if(found===pairs.length){$(".mwin",el).innerHTML=`<div class="result"><p class="big" style="font-size:2.6rem">Bravo !</p><p>You found all ${pairs.length} pairs in ${moves} moves.</p><button class="btn">Play again</button></div>`;$(".mwin button",el).onclick=start;gameWon("Memory cards");if(moves<=10)award("memoire")}}
+        else{lock=true;setTimeout(()=>{x.classList.remove("up");y.classList.remove("up");x.setAttribute("aria-label","Hidden card");y.setAttribute("aria-label","Hidden card");up=[];lock=false},900)}
+      }
+    });
+  };
+  start();
+};
+
+MOUNT.scramble=el=>{
+  el.className="activity";
+  const WORDS=CL().scramble;
+  let order=shuffle(WORDS),r=0,score=0;
+  const round=()=>{
+    if(r>=order.length){el.innerHTML=`<div class="result"><p class="big" style="font-size:2.6rem">${score} / ${order.length}</p><p>Words unscrambled. ${score===order.length?"Magnifique !":"Try again to beat your score."}</p><button class="btn">Play again</button></div>`;$("button",el).onclick=()=>{order=shuffle(WORDS);r=0;score=0;round()};gameWon("Word scramble",score,order.length);return}
+    const [w,en]=order[r];let letters=[...w].map((ch,id)=>({ch,id}));let mixed;do{mixed=shuffle(letters)}while(mixed.map(x=>x.ch).join("")===w);
+    let pool=mixed,built=[];
+    const draw=(msg="",cls="")=>{
+      el.innerHTML=`<div class="qhead"><span>Word ${r+1} of ${order.length}</span><span>Score: ${score}</span></div>
+        <p class="qtext">Hint: “${en}”</p>
+        <div class="letters slotrow" aria-label="Your word">${built.map(x=>`<button class="letter" data-b="${x.id}">${x.ch}</button>`).join("")}</div>
+        <div class="letters" aria-label="Letters">${pool.map(x=>`<button class="letter" data-p="${x.id}">${x.ch}</button>`).join("")}</div>
+        <p class="feedback ${cls}" aria-live="polite">${msg}</p>
+        <div class="row"><button class="btn ghost small" data-act="skip">Skip</button><button class="btn ghost small" data-act="hear">Hear it</button></div>`;
+      $$("[data-p]",el).forEach(b=>b.onclick=()=>{const k=pool.findIndex(x=>x.id==b.dataset.p);built.push(pool.splice(k,1)[0]);check()});
+      $$("[data-b]",el).forEach(b=>b.onclick=()=>{const k=built.findIndex(x=>x.id==b.dataset.b);pool.push(built.splice(k,1)[0]);draw()});
+      $("[data-act=skip]",el).onclick=()=>{r++;round()};
+      $("[data-act=hear]",el).onclick=()=>speak(w.toLowerCase());
+    };
+    const check=()=>{
+      if(pool.length){draw();return}
+      if(built.map(x=>x.ch).join("")===w){score++;speak(w.toLowerCase());draw("Correct ! "+w,"good");setTimeout(()=>{r++;round()},1200)}
+      else draw("Not quite. Tap letters in your word to move them back.","bad");
+    };
+    draw();
+  };
+  round();
+};
+
+/* Round-based game used by "Qu'est-ce que c'est ?", "Un, une ou des ?" and "Un ou une ?" */
+function roundGame(el,{name,items,prompt,options,isRight,after,hear,doneMsg}){
+  el.className="activity";
+  let order=shuffle(items),r=0,score=0;
+  const draw=()=>{
+    if(r>=order.length){
+      el.innerHTML=`<div class="result"><p class="big" style="font-size:2.6rem">${score} / ${order.length}</p><p>${score===order.length?"Parfait !":score>=order.length*.7?"Très bien !":"Keep practising and try again."} ${doneMsg||""}</p><button class="btn">Play again</button></div>`;
+      $("button",el).onclick=()=>{order=shuffle(items);r=0;score=0;draw()};gameWon(name,score,order.length);return;
+    }
+    const it=order[r], opts=options(it);
+    el.innerHTML=`<div class="qhead"><span>${r+1} of ${order.length}</span><span>Score: ${score}</span></div>
+      <div class="pbar"><i style="width:${r/order.length*100}%"></i></div>
+      <div class="prompt">${prompt(it)}</div>
+      <div class="opts ${opts.length<=3?"short":""}">${opts.map((o,k)=>`<button class="opt" data-k="${k}">${esc(o)}</button>`).join("")}</div>
+      <p class="feedback" aria-live="polite"></p>
+      <div><button class="btn" data-act="next" hidden>${r===order.length-1?"See my score":"Next"}</button></div>`;
+    if(hear)hear(it);
+    const fb=$(".feedback",el), next=$("[data-act=next]",el);
+    $$(".opt",el).forEach(b=>b.onclick=()=>{
+      const pick=opts[+b.dataset.k], ok=isRight(it,pick);
+      $$(".opt",el).forEach((x,k)=>{x.disabled=true;if(isRight(it,opts[k]))x.classList.add("right")});
+      if(ok){score++;fb.className="feedback good";fb.textContent="Correct ! "+after(it)}
+      else{b.classList.add("wrong");fb.className="feedback bad";fb.textContent="Not quite. "+after(it)}
+      next.hidden=false;next.focus();
+    });
+    next.onclick=()=>{r++;draw()};
+  };
+  draw();
+}
+const itIs=v=>(v.art==="des"?"Ce sont ":"C'est ")+v.fr+".";
+
+MOUNT.picture=el=>{
+  const V=CL().vocab.filter(v=>v.pic);
+  roundGame(el,{name:"Qu'est-ce que c'est ?",
+    items:shuffle(V).slice(0,8),
+    prompt:v=>`<div class="bigpic" aria-label="Picture">${v.pic}</div><div class="row" style="justify-content:center">${sayBtn("Qu'est-ce que c'est ?")}<span class="qtext" style="font-size:1.4rem">Qu'est-ce que c'est ?</span></div>`,
+    options:v=>shuffle([v,...shuffle(V.filter(x=>x!==v)).slice(0,3)]).map(itIs),
+    isRight:(v,o)=>o===itIs(v),
+    after:v=>{speak(itIs(v));return `${itIs(v)} (${v.en})`}
+  });
+};
+MOUNT.genre=el=>{
+  const V=CL().vocab.filter(v=>v.art);
+  roundGame(el,{name:"Un, une ou des ?",
+    items:shuffle(V).slice(0,10),
+    prompt:v=>`<div class="bigpic" style="font-size:3rem">${v.pic||""}</div><p class="qtext" style="text-align:center">_____ ${esc(v.n)}</p><p class="muted" style="text-align:center">${esc(v.en)}</p>`,
+    options:()=>["un","une","des"],
+    isRight:(v,o)=>o===v.art,
+    after:v=>{speak(v.fr);return `${v.fr} (${v.en})`}
+  });
+};
+MOUNT.unune=el=>{
+  const V=CL().vocab.filter(v=>v.art==="un"||v.art==="une");
+  roundGame(el,{name:"Un ou une ?",
+    items:shuffle(V).slice(0,8),
+    prompt:v=>`<div class="row" style="justify-content:center;gap:10px">${sayBtn(v.fr,"Play the word")}${slowBtn(v.fr)}</div><p class="muted" style="text-align:center">Listen. Do you hear <b>un</b> or <b>une</b>?</p>`,
+    options:()=>["un","une"],
+    isRight:(v,o)=>o===v.art,
+    after:v=>`${v.fr} (${v.en})`,
+    hear:v=>setTimeout(()=>speak(v.fr),250),
+    doneMsg:"Un: lips stretched. Une: lips rounded."
+  });
+};
+
+MOUNT.speak=el=>{
+  const ph=CL().speaking;
+  el.innerHTML=ph.map((p,n)=>`<div class="check">${sayBtn(p)}${slowBtn(p)}<span style="font-weight:600">${esc(p)}</span><label for="sp-${n}"><input type="checkbox" id="sp-${n}" ${S.spoken[CUR+":"+n]?"checked":""}>I said it 3×</label></div>`).join("")+`<p class="feedback good" aria-live="polite"></p>`;
+  const upd=()=>{const c=ph.filter((_,n)=>S.spoken[CUR+":"+n]).length;$(".feedback",el).textContent=c===ph.length?"All phrases practised. Très bien !":`${c} of ${ph.length} practised`;if(c===ph.length){award("bavard");if(!S.spoken[CUR+":done"]){S.spoken[CUR+":done"]=1;save();record({type:"speaking",topic:CUR,title:CL().title})}}};
+  $$("input",el).forEach((inp,n)=>inp.onchange=()=>{S.spoken[CUR+":"+n]=inp.checked;save();upd()});
+  upd();
+};
+
+/* ---------- time helpers ---------- */
+function ago(t){if(!t)return "never";const s=(Date.now()-t)/1000;if(s<60)return "just now";if(s<3600)return Math.floor(s/60)+" min ago";if(s<86400)return Math.floor(s/3600)+" h ago";const d=Math.floor(s/86400);return d===1?"yesterday":d+" days ago"}
+function fmtDate(d){try{return new Date(d+(String(d).length===10?"T12:00":"")).toLocaleDateString(undefined,{weekday:"short",day:"numeric",month:"short"})}catch(e){return d}}
+const ONLINE_MS=3*60*1000;
+const isOnline=u=>!!u.lastActive&&Date.now()-u.lastActive<ONLINE_MS&&!(u.offlineAt&&u.offlineAt>=u.lastActive);
+const startOfDay=()=>{const d=new Date();d.setHours(0,0,0,0);return d.getTime()};
+const KIND_LOG={quiz:"🧠 Quiz",game:"🎮 Game",listening:"🎧 Listening",exercise:"✍️ Exercise",lesson:"📚 Lesson completed",speaking:"🗣️ Speaking",homework:"📝 Homework sent",goal:"🎯 Goal done",login:"🔑 Logged in",register:"✨ Joined"};
+function describe(e){return `${KIND_LOG[e.type]||e.type}${e.title?" · "+esc(e.title):""}${e.game?" · "+esc(e.game):""}${e.total?` · <b>${e.score}/${e.total}</b> (${e.pct}%)`:""}`}
+function pctClass(p){return p>=80?"ok":p>=50?"mid":"low"}
+
+/* ---------- teacher dashboard data ---------- */
+async function teacherData(){
+  const [users,prog,recent,subs]=await Promise.all([API.users(),API.allProgress(),API.recentLog(40),API.submissions()]);
+  let students=users.filter(u=>u.role==="student");
+  if(tClass)students=students.filter(u=>u.cls===tClass);
+  const ids=new Set(students.map(u=>u.uid));
+  return {students,prog,recent:recent.filter(e=>ids.has(e.uid)),subs:subs.filter(s=>ids.has(s.uid))};
+}
+function studentStats(u,p){
+  p=Object.assign(blankProgress(),p||{});
+  const best=Object.values(p.quizBest);
+  return {lessons:Object.keys(p.done).length,quizzes:p.counts.quiz||0,avg:best.length?Math.round(best.reduce((a,b)=>a+b,0)/best.length):null,games:p.games||0,badges:Object.keys(p.badges).length,goals:p.goals||{}};
+}
+const dot=u=>`<span class="dot ${isOnline(u)?"on":""}" aria-hidden="true"></span>`;
+
+MOUNT.tOverview=async el=>{
+  try{
+    const {students,prog,recent,subs}=await teacherData();
+    const online=students.filter(isOnline), today=students.filter(u=>u.lastActive>=startOfDay());
+    const quizzes=recent.filter(e=>e.type==="quiz");
+    const allBest=students.map(u=>studentStats(u,prog[u.uid]).avg).filter(x=>x!=null);
+    const avg=allBest.length?Math.round(allBest.reduce((a,b)=>a+b,0)/allBest.length)+"%":"–";
+    const toReview=subs.filter(s=>!s.feedback).length;
+    const recentUsers=[...students].sort((a,b)=>(b.lastActive||0)-(a.lastActive||0)).slice(0,8);
+    const lastOf=uid=>recent.find(e=>e.uid===uid);
+    el.innerHTML=`<div class="stack" style="gap:32px">
+      <dl class="stats">
+        <div><dt>Students</dt><dd>${students.length}</dd></div>
+        <div><dt>Online now</dt><dd class="live">${online.length}</dd></div>
+        <div><dt>Active today</dt><dd>${today.length}</dd></div>
+        <div><dt>Class average</dt><dd>${avg}</dd></div>
+      </dl>
+      ${toReview?`<a class="note row" href="#teacher-homework" style="justify-content:space-between;text-decoration:none;color:inherit"><span>📝 <b>${toReview}</b> homework answer${toReview>1?"s":""} waiting for your feedback</span><span class="btn small">Review</span></a>`:""}
+      <section class="stack" style="gap:12px"><h2>Online now</h2>
+        ${online.length?`<div class="row">${online.map(u=>`<a class="person" href="#pupil-${u.uid}">${dot(u)}${esc(u.name)}<span class="muted">${esc(u.cls||"")}</span></a>`).join("")}</div>`:`<p class="muted">Nobody is online right now. Students show here while they have the site open.</p>`}
+      </section>
+      <section class="stack" style="gap:12px"><h2>Recently active</h2>
+        ${recentUsers.length?`<div class="tablewrap"><table><thead><tr><th>Student</th><th>Last seen</th><th>Last activity</th></tr></thead><tbody>
+          ${recentUsers.map(u=>{const e=lastOf(u.uid);return `<tr><td><a href="#pupil-${u.uid}">${dot(u)}${esc(u.name)}</a></td><td>${isOnline(u)?'<span class="chip ok">Online</span>':ago(u.lastActive)}</td><td>${e?describe(e):'<span class="muted">–</span>'}</td></tr>`}).join("")}
+        </tbody></table></div>`:`<p class="muted">No students yet. Share your site link and ask them to create an account.</p>`}
+      </section>
+      <section class="stack" style="gap:12px"><div class="row" style="justify-content:space-between"><h2>Live activity</h2><span class="chip live-chip">● Updates automatically</span></div>
+        ${recent.length?`<div class="feed">${recent.slice(0,25).map(e=>`<div class="feed-row"><span class="when">${ago(e.at)}</span><a href="#pupil-${e.uid}"><b>${esc(e.name)}</b></a><span class="muted">${esc(e.cls||"")}</span><span class="what">${describe(e)}</span></div>`).join("")}</div>`:`<p class="muted">When students finish quizzes, games and lessons, it shows up here.</p>`}
+      </section>
+    </div>`;
+  }catch(e){el.innerHTML=errBox(e)}
+};
+MOUNT.tStudents=async el=>{
+  try{
+    const {students,prog,subs}=await teacherData();
+    const rows=students.map(u=>({u,s:studentStats(u,prog[u.uid]),hw:subs.filter(x=>x.uid===u.uid).length})).sort((a,b)=>a.u.name.localeCompare(b.u.name));
+    el.innerHTML=`<div class="stack" style="gap:14px">
+      <input type="text" id="t-search" placeholder="Search by name" style="max-width:320px" aria-label="Search students">
+      ${rows.length?`<div class="tablewrap"><table id="t-table"><thead><tr><th>Student</th><th>Last seen</th><th>Lessons</th><th>Quizzes</th><th>Avg score</th><th>Games</th><th>Badges</th><th>Homework</th></tr></thead><tbody>
+      ${rows.map(({u,s,hw})=>`<tr data-name="${esc(u.name.toLowerCase())}"><td><a href="#pupil-${u.uid}">${dot(u)}${esc(u.name)}</a><div class="muted" style="font-size:.8rem">@${esc(u.username||"")}</div></td><td>${isOnline(u)?'<span class="chip ok">Online</span>':ago(u.lastActive)}</td><td class="num">${s.lessons}</td><td class="num">${s.quizzes}</td><td class="num">${s.avg!=null?`<span class="score ${pctClass(s.avg)}">${s.avg}%</span>`:"–"}</td><td class="num">${s.games}</td><td class="num">${s.badges}</td><td class="num">${hw}</td></tr>`).join("")}
+      </tbody></table></div>`:`<p class="muted">No students yet.</p>`}
+    </div>`;
+    const sr=$("#t-search",el);if(sr)sr.oninput=()=>{const q=sr.value.toLowerCase();$$("#t-table tbody tr",el).forEach(r=>r.hidden=!r.dataset.name.includes(q))};
+  }catch(e){el.innerHTML=errBox(e)}
+};
+MOUNT.tPupil=async el=>{
+  try{
+    const uid=el.dataset.uid;
+    const [users,prog,log,subs]=await Promise.all([API.users(),API.allProgress(),API.userLog(uid),API.submissions(uid)]);
+    const u=users.find(x=>x.uid===uid);if(!u){el.innerHTML=`<p class="muted">Student not found.</p>`;return}
+    const p=Object.assign(blankProgress(),prog[uid]||{}),s=studentStats(u,p);
+    const goals=ACTS.filter(a=>a.kind==="goal");
+    const topics=[...new Set([...topicsFor("quiz"),...CLASS_TOPICS,"a1-1"])];
+    el.innerHTML=`<div class="stack" style="gap:28px">
+      <div><a href="#teacher-students">← All students</a><h2 style="margin-top:8px">${dot(u)}${esc(u.name)}</h2><p class="muted">@${esc(u.username||"")} · joined ${ago(u.createdAt)} · last seen ${isOnline(u)?"online now":ago(u.lastActive)}</p></div>
+      <dl class="stats"><div><dt>Lessons</dt><dd>${s.lessons}</dd></div><div><dt>Quizzes</dt><dd>${s.quizzes}</dd></div><div><dt>Avg best score</dt><dd>${s.avg!=null?s.avg+"%":"–"}</dd></div><div><dt>Badges</dt><dd>${s.badges} / ${BADGES.length}</dd></div></dl>
+      <section class="stack" style="gap:12px"><h3>Topics</h3><div class="tablewrap"><table><thead><tr><th>Topic</th><th>Completed</th><th>Best quiz</th></tr></thead><tbody>
+        ${topics.map(id=>{const L=LESSONS[id];return `<tr><td>${esc(topicLabel(L))}</td><td>${L.custom?"–":p.done[id]?'<span class="chip ok">Yes</span>':'<span class="chip">Not yet</span>'}</td><td class="num">${p.quizBest[id]!=null?`<span class="score ${pctClass(p.quizBest[id])}">${p.quizBest[id]}%</span>`:"–"}</td></tr>`}).join("")}
+      </tbody></table></div></section>
+      ${goals.length?`<section class="stack" style="gap:12px"><h3>Class goals</h3><div class="row">${goals.map(g=>`<span class="chip ${p.goals[g.id]?"ok":""}">🎯 ${esc(g.title)}: ${p.goals[g.id]?"done":"not yet"}</span>`).join("")}</div></section>`:""}
+      <section class="stack" style="gap:12px"><h3>Homework</h3>${subs.length?subs.map(subCard).join(""):`<p class="muted">No homework sent yet.</p>`}</section>
+      <section class="stack" style="gap:12px"><h3>Activity history</h3>${log.length?`<div class="feed">${log.slice(0,100).map(e=>`<div class="feed-row"><span class="when">${new Date(e.at).toLocaleString(undefined,{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})}</span><span class="what">${describe(e)}</span></div>`).join("")}</div>`:`<p class="muted">Nothing yet.</p>`}</section>
+    </div>`;
+    wireFeedback(el);
+  }catch(e){el.innerHTML=errBox(e)}
+};
+function subCard(s){return `<div class="card sub" data-sub="${esc(s.id)}">
+  <div class="row" style="justify-content:space-between"><div><b>${esc(s.name)}</b> <span class="muted">${esc(s.cls||"")}</span><div class="muted" style="font-size:.85rem">📝 ${esc(s.title)} · ${ago(s.at)}</div></div>${s.feedback?'<span class="chip ok">Replied</span>':'<span class="chip warn">Needs feedback</span>'}</div>
+  <p class="answer">${esc(s.text)}</p>
+  <label for="fb-${esc(s.id)}" class="muted" style="font-size:.85rem">Your feedback</label>
+  <textarea id="fb-${esc(s.id)}" rows="2" placeholder="Très bien ! …">${esc(s.feedback||"")}</textarea>
+  <div><button class="btn small" data-fb="${esc(s.id)}">Save feedback</button></div></div>`}
+function wireFeedback(el){$$("[data-fb]",el).forEach(b=>b.onclick=async()=>{const id=b.dataset.fb,t=$("#fb-"+CSS.escape(id),el).value.trim();b.disabled=true;try{await API.feedback(id,t);toast("Feedback saved");const c=b.closest(".sub").querySelector(".chip");c.className="chip ok";c.textContent="Replied"}catch(e){toast(errMsg(e))}b.disabled=false})}
+MOUNT.tHomework=async el=>{
+  try{
+    const {subs}=await teacherData();
+    const open=subs.filter(s=>!s.feedback),done=subs.filter(s=>s.feedback);
+    el.innerHTML=`<div class="stack" style="gap:24px">
+      <section class="stack" style="gap:12px"><h2>Needs feedback (${open.length})</h2>${open.length?open.map(subCard).join(""):`<p class="muted">All caught up.</p>`}</section>
+      <section class="stack" style="gap:12px"><h2>Replied (${done.length})</h2>${done.length?done.slice(0,30).map(subCard).join(""):`<p class="muted">Nothing yet.</p>`}</section></div>`;
+    wireFeedback(el);
+  }catch(e){el.innerHTML=errBox(e)}
+};
+MOUNT.tActList=async el=>{
+  const list=[...ACTS].sort((a,b)=>b.createdAt-a.createdAt);
+  el.innerHTML=`<section class="stack" style="gap:12px;margin-top:8px"><h2>Your activities (${list.length})</h2>
+    ${list.length?`<div class="tablewrap"><table><thead><tr><th>Activity</th><th>Section</th><th>Added</th><th></th></tr></thead><tbody>
+    ${list.map(a=>`<tr><td><a href="${actLink(a)}">${esc(a.title)}</a></td><td>${KIND_LABEL[a.kind]}</td><td>${ago(a.createdAt)}</td><td><button class="btn ghost small" data-del="${esc(a.id)}">Delete</button></td></tr>`).join("")}
+    </tbody></table></div>`:`<p class="muted">You haven't added any activities yet.</p>`}</section>`;
+  $$("[data-del]",el).forEach(b=>b.onclick=async()=>{
+    if(!b.dataset.sure){b.dataset.sure=1;b.textContent="Tap again to delete";b.classList.add("danger");return}
+    b.disabled=true;try{await API.deleteActivity(b.dataset.del);await loadActs();toast("Activity deleted");render()}catch(e){toast(errMsg(e))}
+  });
+};
+MOUNT.mylog=async el=>{
+  try{const log=await API.myLog(ME.uid);
+    el.innerHTML=log.length?`<div class="feed">${log.slice(0,8).map(e=>`<div class="feed-row"><span class="when">${ago(e.at)}</span><span class="what">${describe(e)}</span></div>`).join("")}</div>`:`<p class="muted">Nothing yet. Try a quiz or a game!</p>`;
+    const subs=await API.submissions(ME.uid);
+    $$("[data-hwstatus]").forEach(c=>{const s=subs.find(x=>x.topic===c.dataset.hwstatus);if(s){c.className="chip ok";c.textContent=s.feedback?"Teacher replied":"Sent"}});
+  }catch(e){el.innerHTML=`<p class="muted">Couldn't load your activity.</p>`}
+};
+MOUNT.hwsubs=async el=>{
+  try{const subs=(await API.submissions(ME.uid)).filter(s=>s.topic===CUR);
+    el.innerHTML=subs.length?`<h3 style="margin-top:8px">Sent</h3>`+subs.map(s=>`<div class="card sub"><p class="muted" style="font-size:.85rem">${ago(s.at)}</p><p class="answer">${esc(s.text)}</p>${s.feedback?`<p class="note"><b>Teacher:</b> ${esc(s.feedback)}</p>`:`<p class="muted" style="font-size:.85rem">Waiting for your teacher's feedback.</p>`}</div>`).join(""):"";
+  }catch(e){}
+};
+function errBox(e){return `<p class="note">${esc(errMsg(e))} <button class="btn small" onclick="render()">Try again</button></p>`}
+
+/* ---------- friendly error messages ---------- */
+function errMsg(e){
+  const c=(e&&(e.code||e.message))||"";
+  const M={
+    "auth/email-already-in-use":"That username is already taken. Try another one.",
+    "auth/invalid-credential":"Username or password is wrong.",
+    "auth/wrong-password":"Username or password is wrong.",
+    "auth/user-not-found":"Username or password is wrong.",
+    "auth/invalid-login-credentials":"Username or password is wrong.",
+    "auth/weak-password":"The password needs at least 6 characters.",
+    "auth/invalid-email":"Please check the email address.",
+    "auth/too-many-requests":"Too many tries. Wait a minute and try again.",
+    "auth/network-request-failed":"No internet connection. Check your connection and try again.",
+    "app/not-allowed-teacher":"This email isn't a teacher account.",
+    "app/not-teacher":"This account is a student account. Use the student login.",
+    "app/not-student":"This is the teacher account. Use the Teacher login.",
+    "permission-denied":"You don't have permission for this. Check the Firestore rules in the setup guide.",
+    "app/offline":"Couldn't reach the server. Check your internet connection."
+  };
+  for(const k in M)if(String(c).includes(k))return M[k];
+  return "Something went wrong. Please try again.";
+}
+
+/* =========================================================
+   BACKEND: Firebase when configured, otherwise demo mode
+   ========================================================= */
+const LIVE=!!(FIREBASE_CONFIG&&FIREBASE_CONFIG.apiKey);
+const STUDENT_DOMAIN="students.frenchwithrana.app";
+const userEmail=u=>`${u.trim().toLowerCase()}@${STUDENT_DOMAIN}`;
+const isTeacherEmail=e=>TEACHER_EMAILS.map(x=>x.trim().toLowerCase()).includes(String(e).trim().toLowerCase());
+const appErr=code=>{const e=new Error(code);e.code=code;return e};
+
+function LocalAPI(){
+  const K="french-with-rana-demo-db";
+  let D={};try{D=JSON.parse(localStorage.getItem(K))||{}}catch(e){}
+  D=Object.assign({accounts:{},users:{},progress:{},log:[],activities:{},subs:{},settings:{classes:["Grade 7A","Grade 7B"]},session:null},D);
+  const persist=()=>{try{localStorage.setItem(K,JSON.stringify(D))}catch(e){}};
+  const watchers=new Set();const notify=()=>watchers.forEach(f=>f());
+  const nid=()=>Math.random().toString(36).slice(2,9)+Date.now().toString(36);
+  const hash=s=>{let h=5381;for(const ch of s)h=((h*33)^ch.charCodeAt(0))>>>0;return h.toString(36)};
+  let cb=null;const fire=()=>cb&&cb(D.session&&D.users[D.session]?{...D.users[D.session]}:null);
+  const make=(em,pw,profile)=>{if(D.accounts[em])throw appErr("auth/email-already-in-use");if(pw.length<6)throw appErr("auth/weak-password");const uid=nid();D.accounts[em]={uid,pw:hash(pw)};D.users[uid]={uid,...profile,createdAt:Date.now(),lastActive:Date.now()};D.session=uid;persist();fire();return {...D.users[uid]}};
+  const signin=(em,pw,role)=>{const a=D.accounts[em];if(!a||a.pw!==hash(pw))throw appErr("auth/invalid-credential");const u=D.users[a.uid];if(u.role!==role)throw appErr(role==="teacher"?"app/not-teacher":"app/not-student");D.session=a.uid;u.lastActive=Date.now();persist();fire();return {...u}};
+  const byTime=a=>a.sort((x,y)=>y.at-x.at);
+  return {
+    live:false,
+    async init(){window.addEventListener("storage",e=>{if(e.key===K){try{D=JSON.parse(e.newValue)||D}catch(x){}notify()}})},
+    onAuth(f){cb=f;setTimeout(fire,0)},
+    async registerStudent({name,username,cls,password}){return make(userEmail(username),password,{name,username:username.toLowerCase(),cls,role:"student"})},
+    async loginStudent(username,password){return signin(userEmail(username),password,"student")},
+    async loginTeacher(email,password){const em=email.trim().toLowerCase();if(!isTeacherEmail(em))throw appErr("app/not-allowed-teacher");
+      if(!D.accounts[em])return make(em,password,{name:em.startsWith("frenchwithrana")?"Rana":em.split("@")[0],email:em,role:"teacher"});
+      return signin(em,password,"teacher")},
+    async logout(){D.session=null;persist();fire()},
+    async loadProgress(uid){return D.progress[uid]?JSON.parse(JSON.stringify(D.progress[uid])):null},
+    async saveProgress(uid,p){D.progress[uid]=JSON.parse(JSON.stringify(p));persist()},
+    async touch(uid){if(D.users[uid]){D.users[uid].lastActive=Date.now();persist();notify()}},
+    async offline(uid){if(D.users[uid]){D.users[uid].offlineAt=Date.now();persist();notify()}},
+    async log(e){D.log.push({id:nid(),...e});persist();notify()},
+    async myLog(uid){return byTime(D.log.filter(x=>x.uid===uid))},
+    async userLog(uid){return byTime(D.log.filter(x=>x.uid===uid))},
+    async recentLog(n){return byTime([...D.log]).slice(0,n)},
+    async users(){return Object.values(D.users).map(u=>({...u}))},
+    async allProgress(){return JSON.parse(JSON.stringify(D.progress))},
+    watch(f){watchers.add(f);return ()=>watchers.delete(f)},
+    async activities(){return Object.values(D.activities)},
+    async addActivity(a){const id=nid();D.activities[id]={...a,id,createdAt:Date.now()};persist();notify();return id},
+    async deleteActivity(id){delete D.activities[id];persist();notify()},
+    async submit(s){const id=nid();D.subs[id]={...s,id};persist();notify()},
+    async submissions(uid){const all=Object.values(D.subs);return byTime(uid?all.filter(s=>s.uid===uid):all)},
+    async feedback(id,text){if(D.subs[id]){D.subs[id].feedback=text;D.subs[id].feedbackAt=Date.now();persist();notify()}},
+    async settings(){return {...D.settings}},
+    async saveSettings(s){D.settings=s;persist();notify()}
+  };
+}
+
+function FireAPI(){
+  const V="https://cdn.jsdelivr.net/npm/firebase@10.14.1/";
+  const load=src=>new Promise((res,rej)=>{const s=document.createElement("script");s.src=src;s.onload=res;s.onerror=()=>rej(appErr("app/offline"));document.head.appendChild(s)});
+  let auth,db,cb=null;
+  const docs=q=>q.docs.map(d=>({id:d.id,...d.data()}));
+  const byTime=a=>a.sort((x,y)=>(y.at||0)-(x.at||0));
+  const profile=async u=>{const d=await db.collection("users").doc(u.uid).get();return d.exists?{uid:u.uid,...d.data()}:null};
+  let registering=false;
+  return {
+    live:true,
+    async init(){
+      await load(V+"firebase-app-compat.js");await load(V+"firebase-auth-compat.js");await load(V+"firebase-firestore-compat.js");
+      firebase.initializeApp(FIREBASE_CONFIG);auth=firebase.auth();db=firebase.firestore();
+      auth.onAuthStateChanged(async u=>{
+        if(registering)return;
+        if(!u){cb&&cb(null);return}
+        try{const p=await profile(u);cb&&cb(p)}catch(e){cb&&cb(null)}
+      });
+    },
+    onAuth(f){cb=f},
+    async registerStudent({name,username,cls,password}){
+      registering=true;
+      try{const c=await auth.createUserWithEmailAndPassword(userEmail(username),password);
+        const p={uid:c.user.uid,name,username:username.toLowerCase(),cls,role:"student",createdAt:Date.now(),lastActive:Date.now()};
+        await db.collection("users").doc(p.uid).set(p);registering=false;cb&&cb(p);return p}
+      finally{registering=false}
+    },
+    async loginStudent(username,password){
+      registering=true;
+      try{const c=await auth.signInWithEmailAndPassword(userEmail(username),password);const p=await profile(c.user);
+        if(!p||p.role!=="student"){await auth.signOut();throw appErr("app/not-student")}
+        registering=false;cb&&cb(p);return p}
+      finally{registering=false}
+    },
+    async loginTeacher(email,password){
+      if(!isTeacherEmail(email))throw appErr("app/not-allowed-teacher");
+      registering=true;
+      try{const c=await auth.signInWithEmailAndPassword(email.trim(),password);let p=await profile(c.user);
+        if(!p){p={uid:c.user.uid,name:email.trim().toLowerCase().startsWith("frenchwithrana")?"Rana":email.split("@")[0],email:email.trim().toLowerCase(),role:"teacher",createdAt:Date.now(),lastActive:Date.now()};await db.collection("users").doc(p.uid).set(p)}
+        registering=false;cb&&cb(p);return p}
+      finally{registering=false}
+    },
+    logout(){return auth.signOut()},
+    async loadProgress(uid){const d=await db.collection("progress").doc(uid).get();return d.exists?d.data():null},
+    saveProgress(uid,p){return db.collection("progress").doc(uid).set({...p,uid,updatedAt:Date.now()})},
+    touch(uid){return db.collection("users").doc(uid).update({lastActive:Date.now()})},
+    offline(uid){return db.collection("users").doc(uid).update({offlineAt:Date.now()})},
+    log(e){return db.collection("log").add(e)},
+    async myLog(uid){return byTime(docs(await db.collection("log").where("uid","==",uid).get()))},
+    async userLog(uid){return byTime(docs(await db.collection("log").where("uid","==",uid).get()))},
+    async recentLog(n){return docs(await db.collection("log").orderBy("at","desc").limit(n).get())},
+    async users(){return docs(await db.collection("users").get()).map(u=>({uid:u.id,...u}))},
+    async allProgress(){const o={};(await db.collection("progress").get()).docs.forEach(d=>o[d.id]=d.data());return o},
+    watch(f){
+      let first=2;const go=()=>{if(first>0){first--;return}f()};
+      const a=db.collection("log").orderBy("at","desc").limit(1).onSnapshot(go,()=>{});
+      const b=db.collection("users").onSnapshot(go,()=>{});
+      return ()=>{a();b()};
+    },
+    async activities(){return docs(await db.collection("activities").get())},
+    async addActivity(a){const r=await db.collection("activities").add({...a,createdAt:Date.now()});return r.id},
+    deleteActivity(id){return db.collection("activities").doc(id).delete()},
+    submit(s){return db.collection("submissions").add(s)},
+    async submissions(uid){const q=uid?db.collection("submissions").where("uid","==",uid):db.collection("submissions");return byTime(docs(await q.get()))},
+    feedback(id,text){return db.collection("submissions").doc(id).update({feedback:text,feedbackAt:Date.now()})},
+    async settings(){const d=await db.collection("settings").doc("main").get();return d.exists?d.data():{classes:[]}},
+    saveSettings(s){return db.collection("settings").doc("main").set(s)}
+  };
+}
+const API=LIVE?FireAPI():LocalAPI();
+
+/* ---------- router ---------- */
+const VIEWS={home,learn,lesson,games,quiz,listening,speaking,homework,progress,teacher,pupil,login,register,dashboard,setup};
+const NAV_OF={lesson:"learn",pupil:"teacher",setup:"teacher",dashboard:"",login:"",register:""};
+let unwatch=null;
+function currentRoute(){const h=decodeURIComponent(location.hash.slice(1))||"home";const r=h.split("-")[0];return {h,r,arg:h.slice(r.length+1)}}
+function render(){
+  const {h,r,arg}=currentRoute();
+  const PART_IDS=PARTS.map(p=>p[0]);
+  if(PART_IDS.includes(h)&&$("#"+h)){ $("#"+h).scrollIntoView({behavior:"smooth"});return }
+  const OPEN=["login","register","teacher"];
+  const view=!ME&&!OPEN.includes(r)?login:(VIEWS[r]||home);
+  window.speechSynthesis&&speechSynthesis.cancel();
+  $("#app").innerHTML=view(arg);
+  $$("[data-mount]",$("#app")).forEach(el=>MOUNT[el.dataset.mount]&&MOUNT[el.dataset.mount](el));
+  const navKey=NAV_OF[r]!=null?NAV_OF[r]:(VIEWS[r]?r:"home");
+  $$("#nav a").forEach(a=>{if(navKey&&a.getAttribute("href")==="#"+navKey){a.setAttribute("aria-current","page");a.scrollIntoView({block:"nearest",inline:"nearest"})}else a.removeAttribute("aria-current")});
+  renderAccount();
+  window.scrollTo(0,0);
+  wire();
+  /* live updates on the teacher overview and students list */
+  if(unwatch){unwatch();unwatch=null}
+  if(isTeacher()&&(h==="teacher"||h==="teacher-students"||r==="pupil")){
+    let t;unwatch=API.watch(()=>{clearTimeout(t);t=setTimeout(()=>{const box=$("[data-mount=tOverview],[data-mount=tStudents]");if(box&&!(document.activeElement&&document.activeElement.id==="t-search"))MOUNT[box.dataset.mount](box)},800)});
+  }
+}
+function renderAccount(){
+  $("#nav").hidden=!ME;
+  $("#navTeacher").hidden=!isTeacher();
+  const a=$("#account");
+  a.innerHTML=ME?`<a class="acct" href="${isTeacher()?"#teacher":"#dashboard"}"><span class="avatar" aria-hidden="true">${esc(ME.name.trim()[0]||"?").toUpperCase()}</span><span class="acct-name">${esc(ME.name.split(" ")[0])}</span></a><button class="btn ghost small" id="logoutBtn">Log out</button>`
+    :"";
+  const lo=$("#logoutBtn");if(lo)lo.onclick=async()=>{await flushSave();if(isStudent())await API.offline(ME.uid).catch(()=>{});await API.logout();toast("Logged out. À bientôt !");location.hash="#login"};
+}
+function formErr(form,msg){const p=$(".form-err",form);p.textContent=msg||""}
+function busy(form,on){const b=$("button:not([type=button])",form);if(b){b.disabled=on;b.dataset.label=b.dataset.label||b.textContent;b.textContent=on?"Please wait…":b.dataset.label}}
+function wire(){
+  $$("[data-level]").forEach(b=>b.onclick=()=>{learnLevel=b.dataset.level;$("#app").innerHTML=learn();wire()});
+  $$("[data-jump]").forEach(a=>a.onclick=e=>{e.preventDefault();$("#"+a.dataset.jump).scrollIntoView({behavior:"smooth"})});
+  const pd=$("#playDialogue");
+  if(pd)pd.onclick=()=>{window.speechSynthesis&&speechSynthesis.cancel();CL().dialogue.forEach(d=>speak(d.fr,{pitch:d.pitch,queue:true}))};
+  const md=$("#markDone");
+  if(md)md.onclick=()=>{const first=!S.done[CUR];S.done[CUR]=true;save();award("premier");if(first)record({type:"lesson",topic:CUR,title:CL().title});toast("Lesson completed. Bravo !");md.textContent="Completed"};
+  $$("[data-game]").forEach(b=>b.onclick=()=>{$$("[data-game]").forEach(x=>x.setAttribute("aria-pressed",x===b));const box=$("#gameBox");box.innerHTML="";MOUNT[b.dataset.game](box)});
+  const vp=$("#voice-pick");
+  if(vp){fillVoicePick(vp);vp.onchange=()=>{PREF.voice=vp.value;savePrefs();pickVoice();speak("Bonjour ! Je m'appelle Rana.")};$("#voiceTest").onclick=()=>speak("Bonjour ! Je m'appelle Rana. Bienvenue !")}
+  $$("[data-goal]").forEach(b=>b.onclick=()=>{const g=ACTS.find(a=>a.id===b.dataset.goal);S.goals[g.id]=Date.now();save();record({type:"goal",title:g.title,topic:"goal-"+g.id});toast("🎯 Goal done. Bravo !");render()});
+
+  /* student login / register */
+  const lf=$("#loginForm");
+  if(lf)lf.onsubmit=async e=>{e.preventDefault();formErr(lf);busy(lf,true);
+    try{await API.loginStudent($("#li-user").value,$("#li-pass").value);record({type:"login"});location.hash="#dashboard";toast("Bon retour !")}catch(x){formErr(lf,errMsg(x))}busy(lf,false)};
+  const rf=$("#regForm");
+  if(rf)rf.onsubmit=async e=>{e.preventDefault();formErr(rf);
+    const name=$("#rg-name").value.trim(),user=$("#rg-user").value.trim().toLowerCase(),cls="",pw=$("#rg-pass").value,pw2=$("#rg-pass2").value;
+    if(name.length<2)return formErr(rf,"Please write your full name.");
+    if(!/^[a-z0-9._-]{3,20}$/.test(user))return formErr(rf,"Usernames use 3–20 letters, numbers, dots or dashes, with no spaces.");
+    if(pw.length<6)return formErr(rf,"The password needs at least 6 characters.");
+    if(pw!==pw2)return formErr(rf,"The two passwords are different.");
+    busy(rf,true);
+    try{guestCarry=guestProgress();await API.registerStudent({name,username:user,cls,password:pw});record({type:"register"});location.hash="#dashboard";toast(`Bienvenue, ${name.split(" ")[0]} !`)}catch(x){formErr(rf,errMsg(x))}busy(rf,false)};
+  /* teacher login / register */
+  const tl=$("#tLoginForm");
+  if(tl)tl.onsubmit=async e=>{e.preventDefault();formErr(tl);busy(tl,true);try{await API.loginTeacher($("#tl-email").value,$("#tl-pass").value);location.hash="#teacher";render()}catch(x){formErr(tl,errMsg(x))}busy(tl,false)};
+  /* teacher tools */
+  const tc=$("#t-class");if(tc)tc.onchange=()=>{tClass=tc.value;render()};
+  const cf=$("#classesForm");
+  if(cf)cf.onsubmit=async e=>{e.preventDefault();const classes=$("#t-classes").value.split(/\n+/).map(s=>s.trim()).filter(Boolean);try{await API.saveSettings({...SETTINGS,classes});SETTINGS.classes=classes;toast("Classes saved")}catch(x){toast(errMsg(x))}};
+  $$("[data-kind]").forEach(b=>b.onclick=()=>{EDIT_KIND=b.dataset.kind;$$("[data-kind]").forEach(x=>x.setAttribute("aria-pressed",x===b));$("#a-help").textContent=KIND_HELP[EDIT_KIND];$("#a-fields").innerHTML=kindFields(EDIT_KIND);wireRows()});
+  wireRows();
+  const af=$("#actForm");
+  if(af)af.onsubmit=async e=>{e.preventDefault();formErr(af);let a;try{a=readActivity()}catch(x){return formErr(af,x.message)}
+    busy(af,true);try{await API.addActivity(a);await loadActs();toast(`Published: ${a.title}`);render()}catch(x){formErr(af,errMsg(x))}busy(af,false)};
+  const cr=$("#copyRules");
+  if(cr)cr.onclick=()=>{const t=rulesText();try{navigator.clipboard.writeText(t).then(()=>toast("Rules copied"),()=>selectPre())}catch(x){selectPre()}};
+  /* homework */
+  const hs=$("#hwSend");
+  if(hs)hs.onclick=async()=>{const t=$("#hw-answer").value.trim();if(!t){toast("Write your answers first.");return}hs.disabled=true;
+    try{await API.submit({uid:ME.uid,name:ME.name,cls:ME.cls||"",topic:CUR,title:CL().title,text:t,at:Date.now()});record({type:"homework",topic:CUR,title:CL().title});$("#hw-answer").value="";toast("Sent to your teacher ✓");MOUNT.hwsubs($("[data-mount=hwsubs]"))}catch(x){toast(errMsg(x))}hs.disabled=false};
+}
+function selectPre(){const r=document.createRange();r.selectNodeContents($("#rulesPre"));const s=getSelection();s.removeAllRanges();s.addRange(r);toast("Rules selected. Copy them now.")}
+function wireRows(){const b=$("#a-addrow");if(b)b.onclick=()=>{$("#a-rows").insertAdjacentHTML("beforeend",EDIT_KIND==="quiz"?quizRow():listenRow())}}
+
+/* ---------- start ---------- */
+let guestCarry=null, beat=null;
+async function boot(){
+  $("#app").innerHTML=`<p class="muted" style="padding-block:40px">Chargement…</p>`;
+  try{await API.init()}catch(e){toast(errMsg(e));render();return}
+  try{SETTINGS=await API.settings()}catch(e){}
+  let first=true;
+  API.onAuth(async p=>{
+    ME=p;
+    if(isStudent()){
+      let r=null;try{r=await API.loadProgress(p.uid)}catch(e){}
+      if(r)S=Object.assign(blankProgress(),r);
+      else{S=Object.assign(blankProgress(),guestCarry||{});API.saveProgress(p.uid,S).catch(()=>{})}
+      guestCarry=null;
+      clearInterval(beat);API.touch(p.uid).catch(()=>{});
+      beat=setInterval(()=>{if(document.visibilityState==="visible"&&isStudent())API.touch(ME.uid).catch(()=>{})},60000);
+    }else{clearInterval(beat);S=isTeacher()?blankProgress():guestProgress()}
+    await loadActs();
+    render();
+  });
+}
+window.addEventListener("hashchange",render);
+document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible"&&isStudent())API.touch(ME.uid).catch(()=>{})});
+boot();
+
+</script>
+</body>
+</html>
